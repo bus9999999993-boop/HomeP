@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- 칠기 흑칠 & 주칠 프레임 -->
+  <rect width="100" height="100" fill="#0E0A12"/>
+  <rect x="4" y="4" width="92" height="92" fill="#140D1A" stroke="#C83220" stroke-width="2"/>
+  <rect x="8" y="8" width="84" height="84" fill="none" stroke="#D4AF37" stroke-width="1.2"/>
+  <!-- 네 모서리 금박 장식 -->
+  <polygon points="8,8 18,8 8,18" fill="#D4AF37"/>
+  <polygon points="92,8 82,8 92,18" fill="#D4AF37"/>
+  <polygon points="8,92 18,92 8,82" fill="#D4AF37"/>
+  <polygon points="92,92 82,92 92,82" fill="#D4AF37"/>
+
+  <!-- 🍡 삼색 당고 (花見団子) & 화과자 그릇 -->
+  <g transform="translate(50, 48)">
+    <!-- 옻칠 그릇 받침 (朱塗りの皿) -->
+    <ellipse cx="0" cy="22" rx="34" ry="12" fill="#8F1D10" stroke="#C83220" stroke-width="1.5"/>
+    <ellipse cx="0" cy="20" rx="30" ry="10" fill="#1A0D15" stroke="#D4AF37" stroke-width="1"/>
+
+    <!-- 대각선 대나무 꼬치 (竹串) -->
+    <line x1="-24" y1="-26" x2="26" y2="28" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- 삼색 경단 1: 핑크(분홍 벚꽃색) -->
+    <circle cx="-16" cy="-18" r="11" fill="#FAD4DF" stroke="#D96F8C" stroke-width="1.2"/>
+    <circle cx="-19" cy="-21" r="3" fill="#FFFFFF" opacity="0.6"/>
+
+    <!-- 삼색 경단 2: 화이트(흰색) -->
+    <circle cx="0" cy="-2" r="11" fill="#FAF8F2" stroke="#AA820A" stroke-width="1.2"/>
+    <circle cx="-3" cy="-5" r="3" fill="#FFFFFF" opacity="0.8"/>
+
+    <!-- 삼색 경단 3: 그린(말차/쑥색) -->
+    <circle cx="16" cy="14" r="11" fill="#7FA87F" stroke="#4D734D" stroke-width="1.2"/>
+    <circle cx="13" cy="11" r="3" fill="#FFFFFF" opacity="0.5"/>
+
+    <!-- 붉은 끈 리본 장식 -->
+    <path d="M 22 24 Q 28 32 32 30 Q 28 26 24 24" fill="#C83220"/>
+  </g>
+</svg>

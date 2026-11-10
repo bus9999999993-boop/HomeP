@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❖ 萬事屋 (Yorozuya) :: 平安絵巻 ❖</title>
+  <link rel="stylesheet" href="category1.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       [1] 최상단 네비게이션 헤더 바 (헤이안 옻칠 & 금박 양식)
+       ============================================== -->
+  <header class="top-header-bar">
+    <!-- 화면 최상단 이전 페이지로 돌아가는 버튼 -->
+    <a href="index.html" class="back-btn" id="btnBackHome">
+      <span class="back-btn-arrow">&larr;</span>
+      <span>[ ◀ 帰路 · HOME 으로 ]</span>
+    </a>
+
+    <!-- 상단 상태 라벨 -->
+    <div class="header-status-wrap">
+      <span class="category-tag-badge">平安京</span>
+      <span class="category-system-title">❖ 萬事屋 (Yorozuya) :: 平安雅びの日和 ❖</span>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       [2] 화면 중앙 뷰포트 영역
+       ============================================== -->
+  <main class="center-viewport">
+
+    <!-- 화면 중앙의 옻칠 금장 프레임 (漆塗り屏風フレーム) -->
+    <div class="yorozuya-window">
+
+      <!-- 헤이안 상단 주칠 타이틀 바 -->
+      <div class="window-title-bar">
+        <div class="window-title-left">
+          <span class="window-icon">❖</span>
+          <span>[ 萬事屋 (Yorozuya) :: 都の万事承り処 · 平安絵巻 ]</span>
+        </div>
+        <div class="window-controls">
+          <span class="control-box">一</span>
+          <span class="control-box">口</span>
+          <span class="control-box">&times;</span>
+        </div>
+      </div>
+
+      <!-- ==============================================
+           [3] 화면 중앙 큰 이미지 영역 (메인 공간)
+           - 1) 헤이안 에마키 메인 배경화면
+           - 2) 클릭 가능한 4개의 헤이안 아이콘
+           ============================================== -->
+      <section class="main-image-stage">
+
+        <!-- 1) 메인 배경 이미지 (헤이안 에마키 일러스트) -->
+        <img 
+          src="assets/images/yorozuya_bg.svg" 
+          alt="萬事屋 平安 메인 배경 이미지" 
+          class="stage-bg-img" 
+          id="yorozuyaBgImg"
+        >
+
+        <!-- 2) ★ 큰 이미지 영역 내부: 4개의 클릭 가능한 헤이안 바로가기 패넌 (사문 / 四門) -->
+        <div class="icons-launcher-overlay">
+          <div class="launcher-header-bar">
+            <span class="launcher-title">❖ 平安 萬事屋 四門 (FOUR PATHS) ❖</span>
+            <span class="launcher-tip">[ 選択 · 門をくぐる &rarr; ]</span>
+          </div>
+
+          <div class="icons-grid" id="category1IconsContainer">
+            <!-- [아이콘 1: 의뢰서] 클릭 시 cat1_sub1.html 로 이동 -->
+            <a href="cat1_sub1.html" class="desktop-icon-btn" id="cat1_icon_1" title="원서 의뢰소 페이지로 이동">
+              <div class="desktop-icon-box">
+                <img src="assets/images/cat1_icon1.svg" alt="의뢰서" class="desktop-icon-img">
+                <span class="desktop-icon-number">壱</span>
+              </div>
+              <div class="desktop-icon-label-wrap">
+                <span class="desktop-icon-title">📜 願書 의뢰소</span>
+                <span class="desktop-icon-subtitle">絵巻 · REQUESTS</span>
+              </div>
+            </a>
+
+            <!-- [아이콘 2: 우키요 화랑] 클릭 시 cat1_sub2.html 로 이동 -->
+            <a href="cat1_sub2.html" class="desktop-icon-btn" id="cat1_icon_2" title="우키요 화랑으로 이동">
+              <div class="desktop-icon-box">
+                <img src="assets/images/cat1_icon2.svg" alt="우키요 화랑" class="desktop-icon-img">
+                <span class="desktop-icon-number">弐</span>
+              </div>
+              <div class="desktop-icon-label-wrap">
+                <span class="desktop-icon-title">📸 浮世 화랑</span>
+                <span class="desktop-icon-subtitle">風流 · GALLERY</span>
+              </div>
+            </a>
+
+            <!-- [아이콘 3: 헤이안 일기] 클릭 시 cat1_sub3.html 로 이동 -->
+            <a href="cat1_sub3.html" class="desktop-icon-btn" id="cat1_icon_3" title="헤이안 일기장으로 이동">
+              <div class="desktop-icon-box">
+                <img src="assets/images/cat1_icon3.svg" alt="헤이안 일기" class="desktop-icon-img">
+                <span class="desktop-icon-number">参</span>
+              </div>
+              <div class="desktop-icon-label-wrap">
+                <span class="desktop-icon-title">🎏 平安 일기</span>
+                <span class="desktop-icon-subtitle">随筆 · DIARY</span>
+              </div>
+            </a>
+
+            <!-- [아이콘 4: 만사옥 인물] 클릭 시 cat1_sub4.html 로 이동 -->
+            <a href="cat1_sub4.html" class="desktop-icon-btn" id="cat1_icon_4" title="만사옥 인물록으로 이동">
+              <div class="desktop-icon-box">
+                <img src="assets/images/cat1_icon4.svg" alt="인물록" class="desktop-icon-img">
+                <span class="desktop-icon-number">肆</span>
+              </div>
+              <div class="desktop-icon-label-wrap">
+                <span class="desktop-icon-title">🍡 萬事 人物</span>
+                <span class="desktop-icon-subtitle">仲間 · MEMBERS</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3) 메인 이미지 영역 하단 설명 바 -->
+        <div class="stage-caption-bar">
+          <p class="stage-caption-text">
+            <span class="caption-highlight">萬事屋__괴이와 주술, 일상의 온갖 번뇌 해결.</span> 음양사·주술사 우대. 단, 사례금(엽전)은 필수 지참.
+          </p>
+          <span class="stage-status-badge">[ 結界 : 展開中 ]</span>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- ==============================================
+       [4] 헤이안 하단 푸터 바
+       ============================================== -->
+  <footer class="retro-footer-bar">
+    <span>❖ CATEGORY 01 - 平安京 萬事屋 繪巻物 ❖</span>
+    <span>HEIAN MIYABI TRADITIONAL Y2K :: 万事解決</span>
+  </footer>
+
+  <!-- 설정 및 아이콘 렌더링 스크립트 -->
+  <script src="config.js"></script>
+  <script src="category1.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❖ 萬事屋 :: 4. 萬事 人物 (Members & Stories) ❖</title>
+  <link rel="stylesheet" href="category_gallery.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       [1] 최상단 네비게이션 헤더 바 (돌아가기 버튼)
+       ============================================== -->
+  <header class="gallery-header-bar">
+    <div class="nav-buttons-group">
+      <!-- 萬事屋 메인으로 돌아가는 버튼 -->
+      <a href="category1.html" class="back-nav-btn" id="btnBackToYorozuya">
+        <span>◀</span>
+        <span>[ 萬事屋 본전으로 ]</span>
+      </a>
+      <!-- 메인 홈페이지로 바로가는 버튼 -->
+      <a href="index.html" class="back-nav-btn home-nav-btn">
+        <span>[ 🏠 帰路 · 전체 HOME ]</span>
+      </a>
+    </div>
+
+    <div class="header-status-title">
+      <span class="header-badge">平安 萬事屋</span>
+      <span class="header-desc">🍡 萬事 人物 (MEMBER LOGS & STORIES)</span>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       [2] 화면 중앙 뷰포트 (전체 브라우저 스크롤 없음)
+       ============================================== -->
+  <main class="gallery-main-viewport">
+
+    <!-- ★ 크기가 고정된 전통 화첩/문서 윈도우 프레임 -->
+    <div class="fixed-white-window">
+
+      <!-- 헤이안 윈도우 상단 타이틀 바 -->
+      <div class="window-title-bar">
+        <div class="window-title-left">
+          <span class="window-icon">❖</span>
+          <span>[ 仲間人物帳 · 만사옥 일상 기록 및 글터 ]</span>
+        </div>
+        <div class="window-controls">
+          <span class="control-box">-</span>
+          <span class="control-box">&square;</span>
+          <span class="control-box">&times;</span>
+        </div>
+      </div>
+
+      <!-- 상단 툴바: 통계 및 상태 안내 -->
+      <div class="gallery-toolbar">
+        <div class="toolbar-left">
+          <span class="toolbar-info-text">✍️ 도읍의 일상과 동료들의 소식을 붓으로 기록해 보세요.</span>
+        </div>
+        <div class="toolbar-right">
+          <span class="toolbar-counter" id="postCountDisplay">총 0개의 기록</span>
+        </div>
+      </div>
+
+      <!-- ★ 콘텐츠 영역 내부에서만 스크롤되는 본문 영역 -->
+      <div class="gallery-scroll-body">
+
+        <!-- 1) 글 작성 폼 (제목, 작성 날짜, 본문 입력) -->
+        <section class="post-editor-box">
+          <div class="editor-title-row">
+            <span class="editor-badge">筆 随筆</span>
+            <h2 class="editor-heading">새로운 이야기 기록하기</h2>
+          </div>
+
+          <form id="postForm" class="editor-form-grid">
+            <div class="editor-top-inputs">
+              <!-- 제목 입력창 -->
+              <input 
+                type="text" 
+                id="postTitleInput" 
+                class="post-input-text" 
+                placeholder="글 제목을 입력하세요 (예: 헤이안 도읍의 봄날 풍경...)" 
+                required
+              >
+              <!-- 작성 날짜 입력창 (기본값: 오늘 날짜) -->
+              <input 
+                type="date" 
+                id="postDateInput" 
+                class="post-input-date" 
+                title="작성 날짜"
+              >
+            </div>
+
+            <!-- 본문 입력창 -->
+            <textarea 
+              id="postContentInput" 
+              class="post-input-textarea" 
+              placeholder="본문 내용을 입력하세요... (줄바꿈이 그대로 반영됩니다)" 
+              required
+            ></textarea>
+
+            <div class="editor-btn-row">
+              <button type="submit" class="btn-post-submit">
+                <span>[ 筆 글 기록하기 ]</span>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- 2) 작성된 글 목록 (카드 형태가 아닌 일반 글 형태, 가로선 구분, 최근 순 정렬) -->
+        <section class="post-list-stream" id="postListContainer">
+          <!-- post_engine.js 에 의해 일반 글 형태로 렌더링됩니다 -->
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- 글 작성 및 목록 렌더링 스크립트 -->
+  <script src="post_engine.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new RetroPostEngine({
+        storageKey: "yorozuya_sub4_posts",
+        initialPosts: [
+          {
+            id: "post_sample_1",
+            title: "平安 萬事屋 본전의 아침 풍경",
+            date: "2026.10.24",
+            content: "오늘도 헤이안 도읍의 거리는 벚꽃과 함께 활기가 넘친다.\n은발의 해결사는 툇마루에서 낮잠을 청하고, 붉은 옷의 소녀는 당고를 세 꼬치째 비우고 있다.\n밀린 방세 족자가 또 기둥 틈새로 날아왔지만, 다들 모른 척 평화로운 하루를 시작하는 중이다.",
+            timestamp: 1729728000000
+          },
+          {
+            id: "post_sample_2",
+            title: "신수(神獸) 사다하루와의 도읍 나들이와 당고",
+            date: "2026.10.20",
+            content: "거대한 흰 털의 신수 사다하루와 함께 신사 한 바퀴를 돌고 오는 길에 오토세 주모를 마주쳐 급히 도망쳤다.\n다행히 주작대로 당고 처마에서 사다하루에게 특별 간식을 챙겨주셔서 무사히 귀환 완료.\n내일은 귀족들의 호화로운 의뢰라도 들어왔으면 좋겠다.",
+            timestamp: 1729382400000
+          },
+          {
+            id: "post_sample_3",
+            title: "만사옥 새 동료 모집 두루마리에 부쳐",
+            date: "2026.10.15",
+            content: "음양술이나 검술 가능자 우대, 상식인 대환영.\n단, 보수는 해결사 두목의 단팥죽/당고 값에 따라 지연될 수 있습니다.\n그래도 이곳에서의 일상은 언제나 지루할 틈이 없는 풍류 그 자체입니다.",
+            timestamp: 1728950400000
+          }
+        ]
+      });
+    });
+  </script>
+
+</body>
+</html>

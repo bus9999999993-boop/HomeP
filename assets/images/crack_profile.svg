@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 170" width="100%" height="100%">
+  <!-- 은은한 파스텔 핑크/화이트 배경 -->
+  <rect width="160" height="170" fill="#FFF8FA"/>
+  <rect x="2" y="2" width="156" height="166" fill="none" stroke="#F8BBD0" stroke-width="1"/>
+
+  <!-- 상단 반짝이 도트 -->
+  <text x="25" y="22" font-family="'Gulim', monospace" font-size="10" fill="#F06292">★</text>
+  <text x="135" y="30" font-family="'Gulim', monospace" font-size="8" fill="#F48FB1">✦</text>
+
+  <!-- 여주인공 순정만화 프로필 일러스트 (상반신) -->
+  <g transform="translate(80, 85)">
+    <!-- 머리카락 뒤편 -->
+    <circle cx="0" cy="-10" r="38" fill="#5D4037"/>
+
+    <!-- 얼굴 베이스 -->
+    <circle cx="0" cy="-6" r="28" fill="#FFF3E0"/>
+
+    <!-- 앞머리 -->
+    <path d="M -26 -16 Q 0 -5 26 -16 Q 22 -30 0 -32 Q -22 -30 -26 -16 Z" fill="#4E342E"/>
+
+    <!-- 순정만화 반짝이는 큰 눈동자 -->
+    <ellipse cx="-10" cy="-6" rx="6" ry="8" fill="#2E1C14"/>
+    <ellipse cx="10" cy="-6" rx="6" ry="8" fill="#2E1C14"/>
+    <!-- 눈동자 하이라이트 -->
+    <circle cx="-12" cy="-9" r="2.5" fill="#FFFFFF"/>
+    <circle cx="-9" cy="-4" r="1.2" fill="#FFFFFF"/>
+    <circle cx="8" cy="-9" r="2.5" fill="#FFFFFF"/>
+    <circle cx="11" cy="-4" r="1.2" fill="#FFFFFF"/>
+
+    <!-- 볼터치 -->
+    <ellipse cx="-16" cy="2" rx="4" ry="2.5" fill="#FF8A80" opacity="0.6"/>
+    <ellipse cx="16" cy="2" rx="4" ry="2.5" fill="#FF8A80" opacity="0.6"/>
+
+    <!-- 살짝 놀란 귀여운 입술 -->
+    <circle cx="0" cy="8" r="2.5" fill="#E57373"/>
+
+    <!-- 교복 카라 및 상의 -->
+    <polygon points="-24,24 24,24 34,70 -34,70" fill="#FFFFFF" stroke="#CFD8DC" stroke-width="1"/>
+    <!-- 세일러 타이/리본 -->
+    <polygon points="-8,24 8,24 0,38" fill="#1565C0"/>
+    <circle cx="0" cy="28" r="3" fill="#D32F2F"/>
+  </g>
+
+  <!-- 하단 미니 라벨 -->
+  <rect x="15" y="145" width="130" height="18" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="80" y="157" font-family="'Gulim', 'Dotum', monospace" font-size="9" fill="#888888" text-anchor="middle">여주 엑스트라 모드 On</text>
+</svg>

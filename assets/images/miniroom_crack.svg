@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" width="100%" height="100%">
+  <defs>
+    <!-- 미니룸 핑크 & 파스텔 그라디언트 벽면 -->
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCE4EC"/>
+      <stop offset="70%" stop-color="#F8BBD0"/>
+      <stop offset="100%" stop-color="#F48FB1"/>
+    </linearGradient>
+
+    <!-- 바닥 타일 패턴 -->
+    <pattern id="floorTile" width="30" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 0 10 L 15 0 L 30 10 L 15 20 Z" fill="#FFF9C4" stroke="#FFF59D" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <!-- 방 배경 (아이소메트릭 미니룸 벽면) -->
+  <polygon points="0,0 520,0 520,130 260,165 0,130" fill="url(#wallGrad)"/>
+
+  <!-- 방 바닥 (아이소메트릭 타일 바닥) -->
+  <polygon points="0,130 260,165 520,130 520,220 0,220" fill="#FFFDE7"/>
+  <polygon points="0,130 260,165 520,130 520,220 0,220" fill="url(#floorTile)" opacity="0.85"/>
+
+  <!-- 벽면 장식: 순정만화 창문 (푸른 하늘과 뭉게구름) -->
+  <g transform="translate(60, 20)">
+    <rect x="0" y="0" width="90" height="70" fill="#E1F5FE" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="45" y1="0" x2="45" y2="70" stroke="#FFFFFF" stroke-width="2"/>
+    <line x1="0" y1="35" x2="90" y2="35" stroke="#FFFFFF" stroke-width="2"/>
+    <!-- 커튼 -->
+    <path d="M 0 0 Q 20 40 0 65 L 0 0 Z" fill="#F8BBD0" opacity="0.9"/>
+    <path d="M 90 0 Q 70 40 90 65 L 90 0 Z" fill="#F8BBD0" opacity="0.9"/>
+    <!-- 구름 -->
+    <circle cx="55" cy="22" r="10" fill="#FFFFFF"/>
+    <circle cx="43" cy="25" r="7" fill="#FFFFFF"/>
+    <circle cx="65" cy="25" r="8" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 벽면 액자: Crack High School 교훈 -->
+  <g transform="translate(370, 25)">
+    <rect x="0" y="0" width="85" height="50" fill="#FFFFFF" stroke="#D7CCC8" stroke-width="2"/>
+    <rect x="4" y="4" width="77" height="42" fill="#EFEBE9"/>
+    <text x="42" y="22" font-family="'Gulim', 'Dotum', sans-serif" font-size="9" fill="#5D4037" text-anchor="middle" font-weight="bold">CRACK HIGH</text>
+    <text x="42" y="36" font-family="'Gulim', 'Dotum', sans-serif" font-size="8" fill="#8D6E63" text-anchor="middle">★순정만화 교실★</text>
+  </g>
+
+  <!-- 가구: 레트로 학교 책상 & 의자 -->
+  <g transform="translate(130, 115)">
+    <!-- 책상 -->
+    <polygon points="20,10 80,10 70,30 10,30" fill="#BCAAA4" stroke="#8D6E63" stroke-width="1"/>
+    <rect x="15" y="30" width="50" height="20" fill="#A1887F"/>
+    <line x1="15" y1="50" x2="15" y2="65" stroke="#4E342E" stroke-width="2"/>
+    <line x1="65" y1="50" x2="65" y2="65" stroke="#4E342E" stroke-width="2"/>
+    <!-- 책상 위 교과서와 연필꽂이 -->
+    <polygon points="30,14 48,14 44,22 26,22" fill="#90CAF9"/>
+    <rect x="54" y="10" width="8" height="12" fill="#FFE082"/>
+  </g>
+
+  <!-- 미니미 캐릭터 (순정만화 여주인공 도트 캐릭터) -->
+  <g transform="translate(260, 95)">
+    <!-- 생각 풍선 -->
+    <path d="M 0 -10 Q 15 -30 40 -25 Q 65 -20 60 -5 Q 55 10 30 5 Q 15 10 5 -2 Z" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="1.2"/>
+    <circle cx="-5" cy="-2" r="2" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="1"/>
+    <circle cx="-12" cy="5" r="1.5" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="0.8"/>
+    <text x="32" y="-10" font-family="'Gulim', 'Dotum', monospace" font-size="9" fill="#E91E63" text-anchor="middle" font-weight="bold">엑스트라의 삶이란...♥</text>
+
+    <!-- 캐릭터 머리 (갈색 단발머리) -->
+    <ellipse cx="0" cy="18" rx="14" ry="13" fill="#6D4C41"/>
+    <circle cx="0" cy="19" r="11" fill="#FFECB3"/>
+    <!-- 앞머리 -->
+    <path d="M -11 14 Q 0 20 11 14 Q 10 8 0 7 Q -10 8 -11 14 Z" fill="#5D4037"/>
+    <!-- 눈동자 도트 -->
+    <circle cx="-4" cy="20" r="1.5" fill="#3E2723"/>
+    <circle cx="4" cy="20" r="1.5" fill="#3E2723"/>
+    <!-- 볼터치 -->
+    <circle cx="-7" cy="23" r="2" fill="#FF8A80" opacity="0.7"/>
+    <circle cx="7" cy="23" r="2" fill="#FF8A80" opacity="0.7"/>
+    <!-- 교복 상의 (Crack High 세일러복) -->
+    <polygon points="-8,30 8,30 11,48 -11,48" fill="#FFFFFF" stroke="#ECEFF1" stroke-width="0.8"/>
+    <!-- 리본 타이 -->
+    <polygon points="-4,32 4,32 0,38" fill="#E91E63"/>
+    <line x1="-8" y1="33" x2="8" y2="33" stroke="#1565C0" stroke-width="2"/>
+    <!-- 주름 스커트 (네이비 플리츠) -->
+    <polygon points="-10,48 10,48 13,62 -13,62" fill="#1A237E"/>
+    <!-- 다리 & 양말 & 로퍼 -->
+    <rect x="-6" y="62" width="4" height="15" fill="#FFECB3"/>
+    <rect x="2" y="62" width="4" height="15" fill="#FFECB3"/>
+    <!-- 흰 양말 -->
+    <rect x="-6" y="68" width="4" height="7" fill="#FFFFFF"/>
+    <rect x="2" y="68" width="4" height="7" fill="#FFFFFF"/>
+    <!-- 갈색 로퍼 슈즈 -->
+    <rect x="-7" y="75" width="5" height="4" fill="#3E2723"/>
+    <rect x="2" y="75" width="5" height="4" fill="#3E2723"/>
+  </g>
+
+  <!-- 하단 픽셀 장식 하트 -->
+  <text x="260" y="212" font-family="'Gulim', monospace" font-size="11" fill="#F06292" text-anchor="middle">♥ CRACK HIGH SCHOOL MINIROOM ♥</text>
+</svg>

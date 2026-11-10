@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❖ 萬事屋 :: 1. 願書 의뢰소 (Requests) ❖</title>
+  <link rel="stylesheet" href="category_gallery.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       [1] 최상단 네비게이션 헤더 바 (돌아가기 버튼)
+       ============================================== -->
+  <header class="gallery-header-bar">
+    <div class="nav-buttons-group">
+      <!-- 이전 萬事屋 메인으로 돌아가는 버튼 -->
+      <a href="category1.html" class="back-nav-btn" id="btnBackToYorozuya">
+        <span>◀</span>
+        <span>[ 萬事屋 본전으로 ]</span>
+      </a>
+      <!-- 메인 홈페이지로 바로가는 버튼 -->
+      <a href="index.html" class="back-nav-btn home-nav-btn">
+        <span>[ 🏠 帰路 · 전체 HOME ]</span>
+      </a>
+    </div>
+
+    <div class="header-status-title">
+      <span class="header-badge">平安 萬事屋</span>
+      <span class="header-desc">📜 願書 의뢰소 (REQUEST SCROLLS)</span>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       [2] 화면 중앙 뷰포트 (전체 브라우저 스크롤 없음)
+       ============================================== -->
+  <main class="gallery-main-viewport">
+
+    <!-- ★ 크기가 고정된 전통 화첩/문서 윈도우 프레임 -->
+    <div class="fixed-white-window">
+
+      <!-- 헤이안 윈도우 상단 타이틀 바 -->
+      <div class="window-title-bar">
+        <div class="window-title-left">
+          <span class="window-icon">❖</span>
+          <span>[ 願書之巻 · 의뢰소 그림두루마리 보관소 ]</span>
+        </div>
+        <div class="window-controls">
+          <span class="control-box">-</span>
+          <span class="control-box">&square;</span>
+          <span class="control-box">&times;</span>
+        </div>
+      </div>
+
+      <!-- 상단 툴바: 사진/동영상 파일 추가 버튼 -->
+      <div class="gallery-toolbar">
+        <div class="toolbar-left">
+          <!-- 숨겨진 다중 파일 입력 인풋 (여러 개 연속 추가 가능) -->
+          <input type="file" id="mediaFileInput" accept="image/*,video/*" multiple style="display: none;">
+          
+          <!-- 레트로 파일 추가 버튼 -->
+          <button type="button" class="btn-upload-trigger" onclick="document.getElementById('mediaFileInput').click();">
+            <span>📜</span>
+            <span>[ 그림 / 영상 두루마리 추가 ]</span>
+          </button>
+
+          <span class="toolbar-info-text">💡 의뢰받은 그림이나 영상을 화첩에 등록할 수 있습니다.</span>
+        </div>
+
+        <div class="toolbar-right">
+          <span class="toolbar-counter" id="mediaCountDisplay">총 0개의 두루마리</span>
+        </div>
+      </div>
+
+      <!-- ★ 흰색 콘텐츠 영역 내부에서만 스크롤되는 미디어 그리드 본문 -->
+      <div class="gallery-scroll-body">
+        <div class="media-grid-container" id="mediaGrid">
+          <!-- gallery_engine.js에 의해 정사각형 썸네일이 최근 순서대로 렌더링됩니다 -->
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==============================================
+       [3] 원본 크기 미리보기 모달 창
+       - 닫기 버튼, 바깥 영역 클릭, ESC 키 지원
+       ============================================== -->
+  <div class="retro-modal" id="mediaModal" role="dialog" aria-modal="true">
+    <div class="modal-content-box">
+      <div class="modal-header-bar">
+        <span class="modal-title-text" id="modalMediaTitle">미디어 원본 보기</span>
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="modal-delete-btn" id="modalDeleteBtn" title="이 미디어 삭제">[ 🗑️ 삭제 ]</button>
+          <button type="button" class="modal-close-btn" id="modalCloseBtn" title="닫기 (ESC)">[ &times; 닫기 ]</button>
+        </div>
+      </div>
+      <div class="modal-media-viewport" id="modalMediaBody">
+        <!-- 원본 크기의 이미지 또는 동영상이 여기에 표시됩니다 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 갤러리 엔진 스크립트 로드 -->
+  <script src="gallery_engine.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new RetroGalleryEngine({
+        storageKey: "yorozuya_sub1_requests",
+        initialItems: [
+          {
+            id: "default_item_1",
+            type: "image",
+            url: "assets/images/category1_poster.svg",
+            name: "의뢰_접수증_평안일화.svg",
+            timestamp: 1000
+          },
+          {
+            id: "default_item_2",
+            type: "image",
+            url: "assets/images/yorozuya_bg.svg",
+            name: "만사옥_야간_순찰_현장.svg",
+            timestamp: 2000
+          }
+        ]
+      });
+    });
+  </script>
+
+</body>
+</html>

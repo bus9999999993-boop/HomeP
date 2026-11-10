@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <!-- 각진 레트로 블랙 & 사이안 배지 프레임 -->
+  <rect width="120" height="120" fill="#0b1017"/>
+  <rect x="4" y="4" width="112" height="112" fill="#070a10" stroke="#7DC5E6" stroke-width="2"/>
+  <rect x="8" y="8" width="104" height="104" fill="none" stroke="#e85d4e" stroke-width="1"/>
+
+  <!-- 네 모서리 각진 픽셀 장식 -->
+  <rect x="10" y="10" width="4" height="4" fill="#7DC5E6"/>
+  <rect x="106" y="10" width="4" height="4" fill="#7DC5E6"/>
+  <rect x="10" y="106" width="4" height="4" fill="#7DC5E6"/>
+  <rect x="106" y="106" width="4" height="4" fill="#7DC5E6"/>
+
+  <!-- 중앙 🎏 잉어 깃발 & 심볼 그래픽 -->
+  <g transform="translate(60, 52)">
+    <!-- 깃대 -->
+    <rect x="-35" y="-30" width="3" height="60" fill="#a0b3c6"/>
+    <!-- 깃대 꼭대기 구슬 -->
+    <circle cx="-33.5" cy="-30" r="5" fill="#fce68a" stroke="#d68d00" stroke-width="1"/>
+
+    <!-- 첫 번째 코이노보리 (블루) -->
+    <path d="M -30 -22 L 20 -22 C 28 -22 35 -14 30 -8 L 35 -2 L 15 -5 L -30 -5 Z" fill="#3a8bb8" stroke="#7dc5e6" stroke-width="1.5"/>
+    <circle cx="-22" cy="-14" r="3" fill="#ffffff"/>
+    <circle cx="-22" cy="-14" r="1.5" fill="#0b1017"/>
+    <!-- 비늘 무늬 -->
+    <path d="M -12 -20 Q -7 -14 -12 -8 M -2 -20 Q 3 -14 -2 -8 M 8 -20 Q 13 -14 8 -8" stroke="#7dc5e6" stroke-width="1.2" fill="none"/>
+
+    <!-- 두 번째 코이노보리 (레드) -->
+    <path d="M -30 0 L 15 0 C 22 0 28 6 24 11 L 28 16 L 12 14 L -30 14 Z" fill="#c7493a" stroke="#e85d4e" stroke-width="1.5"/>
+    <circle cx="-23" cy="7" r="2.5" fill="#ffffff"/>
+    <circle cx="-23" cy="7" r="1.2" fill="#0b1017"/>
+    <!-- 비늘 무늬 -->
+    <path d="M -13 2 Q -9 7 -13 12 M -4 2 Q 0 7 -4 12" stroke="#e85d4e" stroke-width="1.2" fill="none"/>
+  </g>
+
+  <!-- 하단 미니 라벨 바 -->
+  <rect x="14" y="92" width="92" height="18" fill="#141c28" stroke="#25354d" stroke-width="1"/>
+  <text x="60" y="105" font-family="'Gulim', 'Dotum', monospace" font-size="10" font-weight="bold" fill="#fce68a" text-anchor="middle" letter-spacing="1">🎏 萬事屋</text>
+</svg>

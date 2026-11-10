@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- 칠기 흑칠 & 주칠 프레임 -->
+  <rect width="100" height="100" fill="#0E0A12"/>
+  <rect x="4" y="4" width="92" height="92" fill="#140D1A" stroke="#C83220" stroke-width="2"/>
+  <rect x="8" y="8" width="84" height="84" fill="none" stroke="#D4AF37" stroke-width="1.2"/>
+  <!-- 네 모서리 금박 장식 -->
+  <polygon points="8,8 18,8 8,18" fill="#D4AF37"/>
+  <polygon points="92,8 82,8 92,18" fill="#D4AF37"/>
+  <polygon points="8,92 18,92 8,82" fill="#D4AF37"/>
+  <polygon points="92,92 82,92 92,82" fill="#D4AF37"/>
+
+  <!-- 📜 헤이안 두루마리 의뢰서 (絵巻 / 願書) -->
+  <g transform="translate(50, 48)">
+    <!-- 붉은 끈 (組紐) -->
+    <line x1="-30" y1="24" x2="30" y2="-24" stroke="#C83220" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="5" fill="#D4AF37"/>
+    <!-- 한지 두루마리 본체 -->
+    <rect x="-24" y="-28" width="48" height="56" fill="#F7F3E8" stroke="#AA820A" stroke-width="1.5" rx="1"/>
+    <!-- 좌우 나무 축 (軸木) -->
+    <rect x="-27" y="-30" width="6" height="60" fill="#C83220" stroke="#7A180E" stroke-width="1"/>
+    <rect x="21" y="-30" width="6" height="60" fill="#C83220" stroke="#7A180E" stroke-width="1"/>
+    <circle cx="-24" cy="-30" r="3" fill="#D4AF37"/>
+    <circle cx="-24" cy="30" r="3" fill="#D4AF37"/>
+    <circle cx="24" cy="-30" r="3" fill="#D4AF37"/>
+    <circle cx="24" cy="30" r="3" fill="#D4AF37"/>
+    <!-- 먹물 붓글씨 줄 (墨書) -->
+    <line x1="-16" y1="-16" x2="14" y2="-16" stroke="#2B1A22" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="-16" y1="-7" x2="14" y2="-7" stroke="#2B1A22" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="-16" y1="2" x2="14" y2="2" stroke="#2B1A22" stroke-width="2.2" stroke-linecap="round"/>
+    <line x1="-16" y1="11" x2="4" y2="11" stroke="#2B1A22" stroke-width="2.2" stroke-linecap="round"/>
+    <!-- 주홍색 낙관 도장 (落款) -->
+    <rect x="6" y="9" width="10" height="10" fill="#C83220"/>
+    <text x="11" y="17" font-family="serif" font-size="7" font-weight="bold" fill="#FFFFFF" text-anchor="middle">願</text>
+  </g>
+</svg>

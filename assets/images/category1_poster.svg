@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="100%" height="100%">
+  <defs>
+    <!-- 옻칠 그라데이션 -->
+    <linearGradient id="urushiPosterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#180C22"/>
+      <stop offset="60%" stop-color="#0E0714"/>
+      <stop offset="100%" stop-color="#060309"/>
+    </linearGradient>
+
+    <!-- 금박 그라데이션 -->
+    <linearGradient id="goldPosterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E7A6"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#8C7320"/>
+    </linearGradient>
+
+    <!-- 달빛 광륜 -->
+    <radialGradient id="moonPosterGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFDF0" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#FCE68A" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 1. 배경: 옻칠 심연 흑자색 -->
+  <rect width="200" height="260" fill="url(#urushiPosterGrad)"/>
+
+  <!-- 2. 헤이안 옻칠 및 금박 액자 테두리 -->
+  <rect x="5" y="5" width="190" height="250" fill="none" stroke="#C83220" stroke-width="2.5"/>
+  <rect x="9" y="9" width="182" height="242" fill="none" stroke="url(#goldPosterGrad)" stroke-width="1.2" stroke-dasharray="8, 3"/>
+  <rect x="13" y="13" width="174" height="234" fill="none" stroke="#3A151C" stroke-width="0.8"/>
+
+  <!-- 네 모서리 금박 장식 -->
+  <path d="M9 18 L18 9 M9 242 L18 251 M191 18 L182 9 M191 242 L182 251" stroke="url(#goldPosterGrad)" stroke-width="1.5"/>
+
+  <!-- 3. 은은한 밤하늘 금가루(金砂子) 패턴 -->
+  <g fill="#F7E7A6" opacity="0.35">
+    <circle cx="28" cy="28" r="1"/><circle cx="55" cy="40" r="1.5"/><circle cx="85" cy="25" r="1"/>
+    <circle cx="150" cy="35" r="1.2"/><circle cx="175" cy="50" r="1"/><circle cx="35" cy="80" r="1.5"/>
+    <circle cx="165" cy="95" r="1"/><circle cx="25" cy="180" r="1.2"/><circle cx="175" cy="170" r="1.5"/>
+  </g>
+
+  <!-- 4. 은은한 헤이안 보름달 (朧月) -->
+  <circle cx="100" cy="95" r="46" fill="url(#moonPosterGrad)"/>
+
+  <!-- 5. 헤이안 궁궐 누각 / 토리이 실루엣 -->
+  <g fill="#C83220">
+    <!-- 토리이 기둥 및 처마 -->
+    <rect x="68" y="76" width="64" height="4.5" rx="0" fill="#D4AF37"/>
+    <path d="M60 74 Q100 68 140 74 L142 78 Q100 73 58 78 Z" fill="#C83220"/>
+    <rect x="74" y="80.5" width="5.5" height="42" fill="#C83220"/>
+    <rect x="120.5" y="80.5" width="5.5" height="42" fill="#C83220"/>
+    <rect x="71" y="90" width="58" height="3" fill="#C83220"/>
+    <!-- 토리이 편액 -->
+    <rect x="94" y="78" width="12" height="15" fill="#0E0A12" stroke="#D4AF37" stroke-width="0.8"/>
+  </g>
+
+  <!-- 6. 헤이안 금구름 (大和絵 州浜・金雲) -->
+  <g fill="url(#goldPosterGrad)" opacity="0.88">
+    <!-- 좌측 구름 -->
+    <path d="M13 145 Q35 138 52 146 Q70 142 85 152 Q95 160 85 168 Q65 174 40 166 L13 166 Z"/>
+    <!-- 우측 구름 -->
+    <path d="M187 130 Q165 122 148 132 Q130 128 118 140 Q112 152 125 158 Q150 162 187 154 Z"/>
+    <!-- 하단 금운 밴드 -->
+    <path d="M13 210 Q60 196 110 205 Q160 198 187 212 L187 247 L13 247 Z" fill="#140818" stroke="#D4AF37" stroke-width="1"/>
+  </g>
+
+  <!-- 7. 흩날리는 벚꽃 잎 (桜吹雪) -->
+  <g fill="#FAD4DF" opacity="0.95">
+    <path d="M48 65 Q54 60 52 69 Q46 72 48 65 Z"/>
+    <path d="M152 75 Q158 70 155 79 Q149 82 152 75 Z"/>
+    <path d="M38 120 Q44 114 42 123 Q36 126 38 120 Z"/>
+    <path d="M162 135 Q168 129 166 138 Q160 141 162 135 Z"/>
+    <path d="M92 145 Q98 140 96 148 Q90 151 92 145 Z"/>
+  </g>
+
+  <!-- 8. 중앙 와후 족자 명판 (萬事屋) -->
+  <g transform="translate(100, 205)">
+    <!-- 옻칠 명판 배경 -->
+    <rect x="-42" y="-22" width="84" height="32" fill="#0C0610" stroke="#D4AF37" stroke-width="1.5"/>
+    <rect x="-39" y="-19" width="78" height="26" fill="none" stroke="#C83220" stroke-width="0.8"/>
+    <!-- 한자 萬事屋 텍스트 -->
+    <text x="0" y="0" font-family="'Yu Mincho', 'Hiragino Mincho ProN', 'Batang', serif" font-size="16" font-weight="bold" fill="#F7E7A6" text-anchor="middle" letter-spacing="3">萬事屋</text>
+  </g>
+
+  <!-- 하단 부제 -->
+  <text x="100" y="235" font-family="'Yu Mincho', 'Batang', serif" font-size="8.5" fill="#C83220" font-weight="bold" text-anchor="middle" letter-spacing="2">平安京 · 都の万事承り処</text>
+</svg>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>★ Crack High school :: 싸이월드 미니홈피 ★</title>
+  <link rel="stylesheet" href="category2.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       [1] 최상단 브라우저 네비게이션 & BGM 상태 바
+       ============================================== -->
+  <header class="cy-top-bar">
+    <div class="cy-top-left">
+      <!-- 메인 홈페이지로 돌아가는 버튼 -->
+      <a href="index.html" class="cy-back-btn" id="btnBackHome">
+        <span>◀</span>
+        <span>[ 메인으로 (HOME) ]</span>
+      </a>
+      <span class="cy-url-box">http://minihp.cyworld.com/crack_highschool</span>
+    </div>
+
+    <div class="cy-top-right">
+      <div class="cy-bgm-player">
+        <span class="bgm-icon">♬</span>
+        <span class="bgm-title" id="hompyBgmTitle">BGM : 프리스타일 - Y (Please Tell Me Why)</span>
+        <span>[재생중 ▶]</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       [2] 메인 뷰포트 (중앙 정렬)
+       ============================================== -->
+  <main class="cy-viewport">
+
+    <!-- 미니홈피 전체 본체: [바인더 북] + [오른쪽 세로형 인덱스] -->
+    <div class="minihompy-shell">
+
+      <!-- ==============================================
+           1. 레트로 바인더 북 (왼쪽 프로필 | 오른쪽 콘텐츠)
+           ============================================== -->
+      <div class="binder-cover">
+        <div class="binder-stitch-line">
+          <div class="binder-pages-wrapper">
+
+            <!-- --------------------------------------------
+                 [왼쪽 페이지] 세로로 긴 프로필 페이지 (크기/위치 고정)
+                 -------------------------------------------- -->
+            <section class="profile-page-col">
+              <!-- 상단 투데이 카운터 (클릭 시 실제 방문 기록 확인 가능) -->
+              <div class="today-counter-wrap" id="todayCounterWrap" title="클릭하여 실제 방문 기록 확인">
+                <span>TODAY <strong class="today-count-red" id="hompyTodayCount">0</strong></span>
+                <span class="today-divider">|</span>
+                <span>TOTAL <span id="hompyTotalCount">0</span></span>
+              </div>
+
+              <!-- 프로필 카드 프레임 (모든 탭에서 항상 고정) -->
+              <div class="profile-card-frame">
+                <!-- 상단 TODAY IS... -->
+                <div class="today-is-row">
+                  <span class="today-is-label">TODAY IS...</span>
+                  <span class="today-is-feeling" id="hompyTodayFeeling" title="클릭하여 기분 문구 변경">⚡ 빙의됨</span>
+                </div>
+
+                <!-- 프로필 이미지 (크기 및 위치 고정, 클릭/호버 시 직접 사진 변경) -->
+                <div class="profile-img-container" id="profileImgContainer" title="클릭하여 프로필 사진 변경">
+                  <img 
+                    src="assets/images/crack_profile.svg" 
+                    alt="프로필 사진" 
+                    class="profile-avatar-img" 
+                    id="hompyProfileImg"
+                  >
+                  <div class="profile-img-overlay">
+                    <span>📷 사진 변경</span>
+                  </div>
+                  <!-- 숨겨진 파일 인풋 -->
+                  <input type="file" id="profileImgInput" accept="image/*" style="display:none;">
+                </div>
+
+                <!-- 프로필 이미지 아래 정보 (입력 칸/카드 형태 X, 일반 텍스트 형태로 자연스럽게 배치) -->
+                <div class="profile-text-content">
+                  <!-- 3. 짧은 자기소개 또는 글귀 (일반 텍스트) -->
+                  <p class="profile-intro-text" id="hompyIntroDesc">
+                    순정만화 속 엑스트라로 빙의했다.<br>
+                    조용히 졸업만 하고 싶은데...<br>
+                    자꾸만 주인공들이 얽혀온다?!<br>
+                    <span style="color:#E91E63;">(제발 저한테 관심 끄세요!)</span>
+                  </p>
+
+                  <!-- 편집 및 방문 기록 버튼 -->
+                  <div class="profile-action-links">
+                    <button type="button" class="cy-link-btn" id="btnEditProfile">▶ EDIT</button>
+                    <button type="button" class="cy-link-btn" id="btnViewHistory">▶ HISTORY</button>
+                  </div>
+
+                  <!-- 1. 홈페이지 이름 & 2. 사용자 이름 (일반 텍스트로 자연스럽게 배치) -->
+                  <div class="profile-names-area">
+                    <div class="profile-hompy-title" id="hompyTitleDisplay">Crack High school</div>
+                    <div class="profile-owner-name-row">
+                      <span class="profile-owner-name" id="hompyOwnerName">여주 (엑스트라)</span>
+                      <span class="gender-symbol">♀</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 하단 파도타기 셀렉트 -->
+                <div class="profile-bottom-area">
+                  <select class="surf-select-box" id="surfSelectBox">
+                    <option value="">★ 일촌 파도타기</option>
+                    <option value="index.html">🏠 메인 첫 화면으로</option>
+                    <option value="category1.html">🎏 萬事屋 (카테고리 1)</option>
+                    <option value="surf_1">구남주 (재벌 후계자)</option>
+                    <option value="surf_2">서브남주 (다정 학생회장)</option>
+                    <option value="surf_3">소이정 (도예가 후계)</option>
+                    <option value="surf_4">송우빈 (일진 보스)</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+
+            <!-- --------------------------------------------
+                 중앙 은색 메탈 바인더 링 4개
+                 -------------------------------------------- -->
+            <div class="binder-center-rings">
+              <span class="metal-ring"></span>
+              <span class="metal-ring"></span>
+              <span class="metal-ring"></span>
+              <span class="metal-ring"></span>
+            </div>
+
+            <!-- --------------------------------------------
+                 [오른쪽 페이지] 넓은 직사각형 콘텐츠 페이지 (크기/위치 고정, 내부 스크롤)
+                 -------------------------------------------- -->
+            <section class="content-page-col">
+              <!-- 상단 미니홈피 한 줄 제목 -->
+              <div class="hompy-title-banner">
+                <h1 class="hompy-main-headline" id="hompyHeadline">
+                  <span>나 함정에 빠진 거 같아...</span> 왜 엑스트라한테 자꾸 집착해?!
+                </h1>
+                <a href="#privacy" class="hompy-privacy-link">사생활보호설정 ▶</a>
+              </div>
+
+              <!-- ★ 탭별 콘텐츠 스크롤 영역 (크기 440px 고정, 내부에서만 스크롤) -->
+              <div class="content-scroll-stage" id="contentScrollStage">
+
+                <!-- ==========================================
+                     [TAB 1 / 아이콘 1] 홈 화면 (공통 구성 1)
+                     ========================================== -->
+                <div class="tab-pane active" id="pane-home" data-cy-page="page1">
+                  <!-- 1. 상단 한 줄짜리 제목 또는 문구 -->
+                  <div class="cy-page-title-banner">
+                    <div class="cy-retro-title-box">
+                      <span class="cy-page-title-text" id="page1TitleText">나 함정에 빠진거같아...</span>
+                    </div>
+                    <button type="button" class="cy-retro-btn btn-edit-title" data-page="page1" title="제목 수정">✏️ 제목 수정</button>
+                  </div>
+
+                  <!-- 2. 큰 직사각형 메인 이미지 영역 (사진 변경 가능) -->
+                  <div class="cy-main-image-container" id="page1ImageContainer" title="클릭하여 사진 변경">
+                    <img src="assets/images/miniroom_crack.svg" alt="메인 이미지" class="cy-main-image" id="page1MainImg">
+                    <div class="cy-main-image-overlay">
+                      <span>📷 메인 사진 변경</span>
+                    </div>
+                    <input type="file" id="page1FileInput" accept="image/*" style="display:none;">
+                  </div>
+
+                  <!-- 3. 이미지 아래: 미니홈수 및 깜짝링크 문구 -->
+                  <div class="cy-sub-link-bar">
+                    <div class="sub-link-left">
+                      <span class="cy-sub-text-btn">▶ 미니룸답글달기 <span class="sub-count-tag">[2]</span></span>
+                      <span class="cy-sub-text-btn">▶ 함께사진찍기</span>
+                    </div>
+                    <div class="sub-link-right">
+                      <span class="cy-mini-count-text" id="page1MiniCountText">미니홈수 [1]</span>
+                      <a href="https://www.cyworld.com" class="cy-surprise-link-btn" id="page1SurpriseLinkAnchor" target="_blank">깜짝링크 [0]</a>
+                      <button type="button" class="cy-retro-btn btn-edit-link" data-page="page1" title="미니홈수 및 깜짝링크 설정">⚙️ 설정</button>
+                    </div>
+                  </div>
+
+                  <!-- 4. 일촌평 영역 -->
+                  <div class="cy-ilchon-container">
+                    <div class="cy-ilchon-header-row">
+                      <span class="cy-ilchon-header-title">일촌평</span>
+                      <span class="cy-ilchon-header-sub">+일촌관리</span>
+                    </div>
+
+                    <!-- 일촌평 작성 폼 (일반 텍스트 형태, 불필요한 카드나 큰 네모 상자 없음) -->
+                    <form class="cy-ilchon-form" id="page1IlchonForm">
+                      <input type="text" class="cy-ilchon-author-input" id="page1IlchonAuthor" placeholder="일촌명/이름" required>
+                      <input type="text" class="cy-ilchon-text-input" id="page1IlchonText" placeholder="일촌평을 입력하세요 (여러 줄 가능)..." required>
+                      <button type="submit" class="cy-ilchon-submit-btn">[ 등록 ]</button>
+                    </form>
+
+                    <!-- 일촌평 텍스트 목록 스트림 -->
+                    <div class="cy-ilchon-list" id="page1IlchonList">
+                      <!-- JS 렌더링 -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ==========================================
+                     [TAB 2 / 아이콘 2] 프로필 화면 (공통 구성 2 - 완전 독립 데이터)
+                     ========================================== -->
+                <div class="tab-pane" id="pane-profile" data-cy-page="page2" style="display:none;">
+                  <!-- 1. 상단 한 줄짜리 제목 또는 문구 -->
+                  <div class="cy-page-title-banner">
+                    <div class="cy-retro-title-box">
+                      <span class="cy-page-title-text" id="page2TitleText">순정만화 엑스트라의 은밀한 이중생활 ★</span>
+                    </div>
+                    <button type="button" class="cy-retro-btn btn-edit-title" data-page="page2" title="제목 수정">✏️ 제목 수정</button>
+                  </div>
+
+                  <!-- 2. 큰 직사각형 메인 이미지 영역 (사진 변경 가능) -->
+                  <div class="cy-main-image-container" id="page2ImageContainer" title="클릭하여 사진 변경">
+                    <img src="assets/images/category2_poster.svg" alt="메인 이미지" class="cy-main-image" id="page2MainImg">
+                    <div class="cy-main-image-overlay">
+                      <span>📷 메인 사진 변경</span>
+                    </div>
+                    <input type="file" id="page2FileInput" accept="image/*" style="display:none;">
+                  </div>
+
+                  <!-- 3. 이미지 아래: 미니홈수 및 깜짝링크 문구 -->
+                  <div class="cy-sub-link-bar">
+                    <div class="sub-link-left">
+                      <span class="cy-sub-text-btn">▶ 미니룸답글달기 <span class="sub-count-tag">[2]</span></span>
+                      <span class="cy-sub-text-btn">▶ 함께사진찍기</span>
+                    </div>
+                    <div class="sub-link-right">
+                      <span class="cy-mini-count-text" id="page2MiniCountText">미니홈수 [14]</span>
+                      <a href="category1.html" class="cy-surprise-link-btn" id="page2SurpriseLinkAnchor" target="_blank">깜짝링크 [도서관 비밀통로 ▶]</a>
+                      <button type="button" class="cy-retro-btn btn-edit-link" data-page="page2" title="미니홈수 및 깜짝링크 설정">⚙️ 설정</button>
+                    </div>
+                  </div>
+
+                  <!-- 4. 일촌평 영역 -->
+                  <div class="cy-ilchon-container">
+                    <div class="cy-ilchon-header-row">
+                      <span class="cy-ilchon-header-title">일촌평</span>
+                      <span class="cy-ilchon-header-sub">+일촌관리</span>
+                    </div>
+
+                    <!-- 일촌평 작성 폼 -->
+                    <form class="cy-ilchon-form" id="page2IlchonForm">
+                      <input type="text" class="cy-ilchon-author-input" id="page2IlchonAuthor" placeholder="일촌명/이름" required>
+                      <input type="text" class="cy-ilchon-text-input" id="page2IlchonText" placeholder="일촌평을 입력하세요 (여러 줄 가능)..." required>
+                      <button type="submit" class="cy-ilchon-submit-btn">[ 등록 ]</button>
+                    </form>
+
+                    <!-- 일촌평 텍스트 목록 스트림 -->
+                    <div class="cy-ilchon-list" id="page2IlchonList">
+                      <!-- JS 렌더링 -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ==========================================
+                     [TAB 3 / 아이콘 3] 사진·동영상 갤러리 1 (사진첩)
+                     ========================================== -->
+                <div class="tab-pane" id="pane-photo" style="display:none;">
+                  <div class="cy-gallery-wrap">
+                    <!-- 상단 툴바: 사진/동영상 업로드 버튼 및 통계 -->
+                    <div class="cy-gallery-toolbar">
+                      <div class="toolbar-left">
+                        <input type="file" id="galleryFileInput3" accept="image/*,video/*" multiple style="display:none;">
+                        <button type="button" class="cy-retro-btn btn-upload-trigger" id="btnUploadGallery3">
+                          <span>📁 [ 사진 / 동영상 추가 ]</span>
+                        </button>
+                        <span class="cy-gallery-tip">💡 여러 파일 연속 추가 가능</span>
+                      </div>
+                      <div class="toolbar-right">
+                        <span class="cy-gallery-counter" id="galleryCount3">총 0개의 미디어</span>
+                      </div>
+                    </div>
+
+                    <!-- 정사각형 썸네일 그리드 (내부 스크롤) -->
+                    <div class="cy-gallery-grid" id="galleryGrid3">
+                      <!-- JS 렌더링 -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ==========================================
+                     [TAB 4 / 아이콘 4] 사진·동영상 갤러리 2 (동영상) - 완전 독립
+                     ========================================== -->
+                <div class="tab-pane" id="pane-board" style="display:none;">
+                  <div class="cy-gallery-wrap">
+                    <!-- 상단 툴바: 사진/동영상 업로드 버튼 및 통계 -->
+                    <div class="cy-gallery-toolbar">
+                      <div class="toolbar-left">
+                        <input type="file" id="galleryFileInput4" accept="image/*,video/*" multiple style="display:none;">
+                        <button type="button" class="cy-retro-btn btn-upload-trigger" id="btnUploadGallery4">
+                          <span>📁 [ 사진 / 동영상 추가 ]</span>
+                        </button>
+                        <span class="cy-gallery-tip">💡 여러 파일 연속 추가 가능</span>
+                      </div>
+                      <div class="toolbar-right">
+                        <span class="cy-gallery-counter" id="galleryCount4">총 0개의 미디어</span>
+                      </div>
+                    </div>
+
+                    <!-- 정사각형 썸네일 그리드 (내부 스크롤) -->
+                    <div class="cy-gallery-grid" id="galleryGrid4">
+                      <!-- JS 렌더링 -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ==========================================
+                     [TAB 5 / 아이콘 5] 글 목록 페이지 (게시판/다이어리)
+                     - 네모난 카드가 아닌 얇은 회색 가로선 구분
+                     - 작성 날짜 자동 기록, 수정/삭제 지원, 최신순 정렬
+                     ========================================== -->
+                <div class="tab-pane" id="pane-guestbook" style="display:none;">
+                  <div class="cy-board-wrap">
+                    <!-- 1) 새 글 작성 폼 -->
+                    <section class="cy-board-write-box">
+                      <div class="cy-board-write-header">
+                        <span class="cy-board-badge">WRITE</span>
+                        <span class="cy-board-write-title">★ 새로운 글 남기기 ★</span>
+                      </div>
+                      <form id="cyBoardForm">
+                        <div class="cy-board-form-row">
+                          <input type="text" id="cyBoardTitleInput" class="cy-board-input" placeholder="글 제목을 입력하세요..." required>
+                        </div>
+                        <div class="cy-board-form-row">
+                          <textarea id="cyBoardContentInput" class="cy-board-textarea" placeholder="본문 내용을 입력하세요... (줄바꿈이 그대로 반영됩니다)" required></textarea>
+                        </div>
+                        <div class="cy-board-form-footer">
+                          <span class="cy-board-auto-date-tip">📅 작성 날짜는 자동으로 기록됩니다.</span>
+                          <button type="submit" class="cy-board-submit-btn">[ ✍️ 글 등록 ]</button>
+                        </div>
+                      </form>
+                    </section>
+
+                    <!-- 상단 글 통계 및 안내 -->
+                    <div class="cy-board-meta-bar">
+                      <span class="cy-board-count-text" id="cyBoardCountDisplay">총 0개의 글</span>
+                      <span class="cy-board-guide-text">최신순 정렬 | 얇은 회색 가로선 구분</span>
+                    </div>
+
+                    <!-- 2) 글 목록 스트림 (카드가 아닌 얇은 회색 가로선 구분) -->
+                    <div class="cy-post-list" id="cyPostListContainer">
+                      <!-- JS 렌더링 -->
+                    </div>
+                  </div>
+                </div>
+
+              </div><!-- /content-scroll-stage -->
+
+            </section>
+
+          </div><!-- /binder-pages-wrapper -->
+        </div><!-- /binder-stitch-line -->
+      </div><!-- /binder-cover -->
+
+      <!-- ==============================================
+           ★ 2. 바인더 오른쪽: 세로형 인덱스 탭 (요구사항: 오른쪽 배치)
+           ============================================== -->
+      <aside class="vertical-index-tabs" id="verticalIndexTabs">
+        <!-- JS 및 config.js에서 탭 이름 동적 렌더링 지원 (홈 -> 성훈, 프로필 -> 바다, 사진첩, 동영상, 게시판) -->
+        <button type="button" class="cy-tab-btn active" data-tab="home" id="tab_home">성훈</button>
+        <button type="button" class="cy-tab-btn" data-tab="profile" id="tab_profile">바다</button>
+        <button type="button" class="cy-tab-btn" data-tab="photo" id="tab_photo">사진첩</button>
+        <button type="button" class="cy-tab-btn" data-tab="board" id="tab_board">동영상</button>
+        <button type="button" class="cy-tab-btn" data-tab="guestbook" id="tab_guestbook">게시판</button>
+      </aside>
+
+    </div><!-- /minihompy-shell -->
+
+  </main>
+
+  <!-- ==============================================
+       [3] 프로필 편집 모달 (EDIT)
+       ============================================== -->
+  <div class="cy-modal-backdrop" id="profileEditModal">
+    <div class="cy-modal-window">
+      <div class="cy-modal-header">
+        <span>★ 프로필 정보 수정 (EDIT PROFILE) ★</span>
+        <button type="button" class="cy-modal-close-btn" id="closeProfileEditModal">&times;</button>
+      </div>
+      <form id="profileEditForm">
+        <div class="cy-modal-body">
+          <div class="cy-form-group">
+            <label class="cy-form-label">1. 홈페이지 이름</label>
+            <input type="text" id="editHompyNameInput" class="cy-form-input" placeholder="홈페이지 이름을 입력하세요" required>
+          </div>
+          <div class="cy-form-group">
+            <label class="cy-form-label">2. 사용자 이름</label>
+            <input type="text" id="editOwnerNameInput" class="cy-form-input" placeholder="사용자 이름을 입력하세요" required>
+          </div>
+          <div class="cy-form-group">
+            <label class="cy-form-label">3. TODAY IS... 기분 문구</label>
+            <input type="text" id="editTodayFeelingInput" class="cy-form-input" placeholder="오늘의 기분 (예: ⚡ 빙의됨)">
+          </div>
+          <div class="cy-form-group">
+            <label class="cy-form-label">4. 프로필 이미지 교체</label>
+            <input type="file" id="editProfileFileInput" class="cy-form-input" accept="image/*">
+            <span style="font-size:10px; color:#888888;">(선택 시 즉시 새 사진으로 교체됩니다)</span>
+          </div>
+          <div class="cy-form-group" style="margin-bottom:0;">
+            <label class="cy-form-label">5. 짧은 자기소개 또는 글귀</label>
+            <textarea id="editIntroDescInput" class="cy-form-textarea" placeholder="자기소개 또는 글귀를 입력하세요 (줄바꿈 지원)"></textarea>
+          </div>
+        </div>
+        <div class="cy-modal-footer">
+          <button type="button" class="cy-btn-secondary" id="cancelProfileEditBtn">취소</button>
+          <button type="submit" class="cy-btn-primary">[ 저장 완료 ]</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       [4] 실제 방문 기록 모달 (HISTORY)
+       ============================================== -->
+  <div class="cy-modal-backdrop" id="visitHistoryModal">
+    <div class="cy-modal-window">
+      <div class="cy-modal-header">
+        <span>★ 실제 방문자 통계 및 기록 (VISIT HISTORY) ★</span>
+        <button type="button" class="cy-modal-close-btn" id="closeVisitHistoryModal">&times;</button>
+      </div>
+      <div class="cy-modal-body">
+        <div style="background-color:#EBF4FA; border:1px solid #C4DDEE; padding:8px 12px; margin-bottom:10px; border-radius:3px;">
+          <div style="font-size:11px; color:#15456A; margin-bottom:2px;">
+            <strong>오늘 방문자 (TODAY):</strong> <span id="historyTodayCountDisplay" style="color:#FF0000; font-weight:bold;">0</span>명
+          </div>
+          <div style="font-size:11px; color:#15456A;">
+            <strong>전체 누적 방문자 (TOTAL):</strong> <span id="historyTotalCountDisplay" style="font-weight:bold;">0</span>명
+          </div>
+          <div style="font-size:10px; color:#6A869C; margin-top:4px;">
+            * 단순 페이지 새로고침은 중복 카운트되지 않으며, 실제 방문자 세션 기준으로 집계됩니다.
+          </div>
+        </div>
+
+        <div style="font-weight:bold; color:#15456A; margin-bottom:4px;">
+          📅 최근 일자별 방문 통계
+        </div>
+        <table class="visit-stats-table">
+          <thead>
+            <tr>
+              <th>날짜 (DATE)</th>
+              <th>일일 방문 수 (VISITS)</th>
+              <th>상태</th>
+            </tr>
+          </thead>
+          <tbody id="visitHistoryTableBody">
+            <!-- JS로 렌더링 -->
+          </tbody>
+        </table>
+      </div>
+      <div class="cy-modal-footer">
+        <button type="button" class="cy-btn-primary" id="confirmVisitHistoryBtn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       [5] 한 줄 제목 수정 모달
+       ============================================== -->
+  <div class="cy-modal-backdrop" id="titleEditModal">
+    <div class="cy-modal-window" style="width: 380px;">
+      <div class="cy-modal-header">
+        <span>★ 한 줄 제목 또는 문구 수정 ★</span>
+        <button type="button" class="cy-modal-close-btn" id="closeTitleEditModal">&times;</button>
+      </div>
+      <form id="titleEditForm">
+        <div class="cy-modal-body">
+          <div class="cy-form-group" style="margin-bottom:0;">
+            <label class="cy-form-label">한 줄 제목 또는 문구 입력</label>
+            <input type="text" id="titleEditInput" class="cy-form-input" placeholder="새로운 제목 문구를 입력하세요" required>
+          </div>
+        </div>
+        <div class="cy-modal-footer">
+          <button type="button" class="cy-btn-secondary" id="cancelTitleEditBtn">취소</button>
+          <button type="submit" class="cy-btn-primary">[ 변경 완료 ]</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       [6] 미니홈수 및 깜짝링크 설정 모달
+       ============================================== -->
+  <div class="cy-modal-backdrop" id="linkEditModal">
+    <div class="cy-modal-window" style="width: 400px;">
+      <div class="cy-modal-header">
+        <span>★ 미니홈수 & 깜짝링크 설정 ★</span>
+        <button type="button" class="cy-modal-close-btn" id="closeLinkEditModal">&times;</button>
+      </div>
+      <form id="linkEditForm">
+        <div class="cy-modal-body">
+          <div class="cy-form-group">
+            <label class="cy-form-label">1. 미니홈수 문구</label>
+            <input type="text" id="miniCountEditInput" class="cy-form-input" placeholder="예: 미니홈수 [1]" required>
+          </div>
+          <div class="cy-form-group">
+            <label class="cy-form-label">2. 깜짝링크 표시 문구</label>
+            <input type="text" id="surpriseTextEditInput" class="cy-form-input" placeholder="예: 깜짝링크 [우리들의 아지트 ▶]" required>
+          </div>
+          <div class="cy-form-group" style="margin-bottom:0;">
+            <label class="cy-form-label">3. 깜짝링크 실제 이동 주소 (URL)</label>
+            <input type="text" id="surpriseUrlEditInput" class="cy-form-input" placeholder="예: https://www.google.com 또는 category1.html" required>
+            <span style="font-size:10px; color:#6A869C; margin-top:3px; display:block;">
+              * 링크 클릭 시 등록된 실제 웹페이지 또는 링크 주소로 이동합니다.
+            </span>
+          </div>
+        </div>
+        <div class="cy-modal-footer">
+          <button type="button" class="cy-btn-secondary" id="cancelLinkEditBtn">취소</button>
+          <button type="submit" class="cy-btn-primary">[ 저장 완료 ]</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       [7] 일촌평 수정 모달
+       ============================================== -->
+  <div class="cy-modal-backdrop" id="ilchonEditModal">
+    <div class="cy-modal-window" style="width: 400px;">
+      <div class="cy-modal-header">
+        <span>★ 일촌평 내용 수정 ★</span>
+        <button type="button" class="cy-modal-close-btn" id="closeIlchonEditModal">&times;</button>
+      </div>
+      <form id="ilchonEditForm">
+        <div class="cy-modal-body">
+          <div class="cy-form-group">
+            <label class="cy-form-label">작성자 (일촌명)</label>
+            <input type="text" id="ilchonEditAuthorInput" class="cy-form-input" required>
+          </div>
+          <div class="cy-form-group" style="margin-bottom:0;">
+            <label class="cy-form-label">일촌평 내용 (여러 줄 지원)</label>
+            <textarea id="ilchonEditTextInput" class="cy-form-textarea" rows="4" required></textarea>
+          </div>
+        </div>
+        <div class="cy-modal-footer">
+          <button type="button" class="cy-btn-secondary" id="cancelIlchonEditBtn">취소</button>
+          <button type="submit" class="cy-btn-primary">[ 수정 완료 ]</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       [8] 갤러리 사진 / 동영상 원본 미리보기 모달
+       - 닫기 버튼, 바깥 영역 클릭, ESC 키 지원
+       ============================================== -->
+  <div class="cy-modal-backdrop" id="cyMediaModal" role="dialog" aria-modal="true">
+    <div class="cy-modal-window" style="width: auto; max-width: 90vw; background: #000; border: 2px solid #5885A8;">
+      <div class="cy-modal-header" style="background: #1B3C59; color: #FFF; border-bottom: 1px solid #366085;">
+        <span id="cyMediaModalTitle">미디어 원본 보기</span>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button type="button" class="cy-modal-close-btn" id="closeCyMediaModal" style="color: #FFF;">&times;</button>
+        </div>
+      </div>
+      <div class="cy-media-modal-body" id="cyMediaModalBody">
+        <!-- 원본 이미지 또는 비디오 태그 렌더링 -->
+      </div>
+      <div class="cy-modal-footer" style="background: #102538; border-top: 1px solid #234563; justify-content: space-between;">
+        <button type="button" class="cy-btn-danger" id="delCyMediaModalBtn">🗑️ 이 미디어 삭제</button>
+        <button type="button" class="cy-btn-primary" id="confirmCyMediaModalBtn">닫기 (ESC)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==============================================
+       [9] 아이콘 5 게시글 수정 모달
+       ============================================== -->
+  <div class="cy-modal-backdrop" id="cyPostEditModal">
+    <div class="cy-modal-window" style="width: 440px;">
+      <div class="cy-modal-header">
+        <span>★ 게시글 내용 수정 ★</span>
+        <button type="button" class="cy-modal-close-btn" id="closeCyPostEditModal">&times;</button>
+      </div>
+      <form id="cyPostEditForm">
+        <div class="cy-modal-body">
+          <div class="cy-form-group">
+            <label class="cy-form-label">글 제목</label>
+            <input type="text" id="editPostTitleInput" class="cy-form-input" required>
+          </div>
+          <div class="cy-form-group" style="margin-bottom:0;">
+            <label class="cy-form-label">글 본문 (줄바꿈 지원)</label>
+            <textarea id="editPostContentInput" class="cy-form-textarea" rows="6" required></textarea>
+          </div>
+        </div>
+        <div class="cy-modal-footer">
+          <button type="button" class="cy-btn-secondary" id="cancelCyPostEditBtn">취소</button>
+          <button type="submit" class="cy-btn-primary">[ 수정 완료 ]</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="category2.js"></script>
+</body>
+</html>

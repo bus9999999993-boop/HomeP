@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <rect width="600" height="380" rx="16" fill="#F5F2EB"/>
+  <rect x="20" y="20" width="560" height="340" rx="12" fill="none" stroke="#E2DCD2" stroke-width="2" stroke-dasharray="6 6"/>
+  <!-- 카메라 / 갤러리 아이콘 -->
+  <g transform="translate(260, 110)">
+    <rect x="10" y="15" width="60" height="46" rx="8" fill="#DDD6C9"/>
+    <path d="M28 15 L34 8 L46 8 L52 15 Z" fill="#DDD6C9"/>
+    <circle cx="40" cy="38" r="14" fill="#F5F2EB"/>
+    <circle cx="40" cy="38" r="9" fill="#DDD6C9"/>
+  </g>
+  <text x="300" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif" font-size="20" font-weight="600" fill="#6E675F" text-anchor="middle">카테고리 1 대표 이미지</text>
+  <text x="300" y="235" font-family="-apple-system, BlinkMacSystemFont, 'Pretendard', sans-serif" font-size="13" fill="#A0988D" text-anchor="middle">assets/images/category1.jpg (또는 png)로 교체해 보세요</text>
+</svg>

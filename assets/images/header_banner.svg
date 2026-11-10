@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 160" width="100%" height="100%">
+  <!-- 배경: 부드러운 연노랑 -->
+  <rect width="960" height="160" fill="#FFFDF2"/>
+  <!-- 각진 레트로 이중 테두리 (연하늘) -->
+  <rect x="6" y="6" width="948" height="148" fill="none" stroke="#7DC5E6" stroke-width="2"/>
+  <rect x="12" y="12" width="936" height="136" fill="none" stroke="#CBE7F6" stroke-width="1"/>
+
+  <!-- 상단 작은 레트로 데코 별 -->
+  <text x="50" y="40" font-family="'Gulim', 'Dotum', monospace" font-size="15" fill="#4B9BC2">★.｡.:*･ﾟ</text>
+  <text x="910" y="40" font-family="'Gulim', 'Dotum', monospace" font-size="15" fill="#4B9BC2" text-anchor="end">ﾟ･*:.｡.★</text>
+
+  <!-- 메인 레트로 영문 타이틀 -->
+  <text x="480" y="75" font-family="'Gulim', 'Dotum', 'Courier New', sans-serif" font-size="28" font-weight="bold" fill="#2E7EAA" text-anchor="middle" letter-spacing="4">
+    ★ WELCOME TO MY HOMEPAGE ★
+  </text>
+  
+  <!-- 서브 안내 텍스트 -->
+  <text x="480" y="110" font-family="'Gulim', 'Dotum', sans-serif" font-size="13" fill="#4A6E82" text-anchor="middle" letter-spacing="1">
+    [상단 배너 이미지 공간] assets/images/header_banner.jpg 파일로 교체할 수 있습니다
+  </text>
+  <text x="480" y="134" font-family="'Gulim', 'Dotum', monospace" font-size="12" fill="#75B4D4" text-anchor="middle">
+    *:+ﾟ 2000s Retro Sky Blue &amp; Cream ﾟ+:*
+  </text>
+</svg>

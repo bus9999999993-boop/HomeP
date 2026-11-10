@@ -1,0 +1,421 @@
+/* ========================================================
+   [CATEGORY1.CSS] 카테고리 1 (萬事屋) 전용 헤이안 시대(平安時代) 와후 레트로 스타일시트
+   - 우루시 옻칠 흑색(#0C0810)과 주작 주홍(#C83220), 금박(#D4AF37)의 기품있는 헤이안 궁중 미학
+   - 최상단: 이전 페이지로 돌아가는 와후 버튼
+   - 화면 중앙: 헤이안 회권(絵巻) 배경 + 4개의 클릭 가능한 사문(四門) 아이콘
+   - 레트로 각진 프레임(border-radius: 0) 유지
+   ======================================================== */
+
+/* 1. 기본 초기화 및 완전한 각진 네모 고정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important; /* ★ 레트로 각진 프레임 유지 */
+}
+
+body {
+  /* ★ 전체 배경: 옻칠 흑자색에 금가루/성채 패턴 */
+  background-color: #0C0810;
+  background-image: 
+    radial-gradient(#25182A 20%, transparent 20%),
+    radial-gradient(rgba(212, 175, 55, 0.15) 15%, transparent 20%);
+  background-size: 12px 12px, 36px 36px;
+  color: #F7F3E8;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Batang", "Nanum Myeongjo", serif, "Gulim", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================
+   [2] 최상단 네비게이션 헤더 바 (돌아가기 버튼 영역)
+   ======================================================== */
+.top-header-bar {
+  width: 100%;
+  background-color: #140C18;
+  border-bottom: 2px solid #C83220;
+  padding: 10px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 0 #D4AF37, 0 6px 12px rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* 화면 최상단 이전 페이지로 돌아가는 버튼 */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #1F0F24;
+  color: #F7E7A6;
+  border: 2px solid #D4AF37;
+  padding: 6px 16px;
+  font-size: 0.88rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Yu Mincho", "Batang", serif;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 2px 0px #C83220;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #C83220;
+  color: #FFFDF8;
+  border-color: #F7E7A6;
+  box-shadow: 3px 3px 0px #D4AF37;
+  transform: translate(-1px, -1px);
+}
+
+.back-btn-arrow {
+  font-size: 1rem;
+  color: #D4AF37;
+}
+
+.back-btn:hover .back-btn-arrow {
+  color: #FFFDF8;
+}
+
+.header-status-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-tag-badge {
+  background-color: #C83220;
+  color: #FAF6ED;
+  font-size: 0.78rem;
+  font-weight: bold;
+  padding: 3px 10px;
+  border: 1px solid #D4AF37;
+  letter-spacing: 0.08em;
+  box-shadow: 1px 1px 0px #000;
+}
+
+.category-system-title {
+  font-size: 0.86rem;
+  color: #E5D5BA;
+  font-family: "Yu Mincho", "Batang", serif;
+  letter-spacing: 0.04em;
+}
+
+/* ========================================================
+   [3] 화면 중앙 메인 컨테이너
+   ======================================================== */
+.center-viewport {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+/* ========================================================
+   [4] 화면 중앙 큰 이미지 영역 (메인 윈도우 프레임)
+   ======================================================== */
+.yorozuya-window {
+  width: 100%;
+  max-width: 960px;
+  background-color: #120A17;
+  border: 3px solid #C83220; /* 주작 주홍 옻칠 실선 테두리 */
+  box-shadow: 6px 6px 0px #08040C, 0 0 20px rgba(212, 175, 55, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤이안 윈도우 상단 타이틀 바 */
+.window-title-bar {
+  background: linear-gradient(90deg, #5B130E 0%, #8A1E14 50%, #5B130E 100%);
+  border-bottom: 2px solid #D4AF37;
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.window-title-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #FAF6ED;
+  letter-spacing: 0.06em;
+  font-family: "Yu Mincho", "Batang", serif;
+}
+
+.window-icon {
+  color: #F7E7A6;
+}
+
+.window-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.control-box {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 20px;
+  background-color: #2E0B08;
+  border: 1px solid #D4AF37;
+  color: #F7E7A6;
+  font-size: 0.74rem;
+  font-family: serif;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* ★ 큰 이미지 영역 메인 공간 (배경 이미지 + 4개 아이콘 배치) */
+.main-image-stage {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  background-color: #0A050D;
+  overflow: hidden;
+  border: 2px solid #2B1218;
+}
+
+/* 1) 메인 배경 이미지 */
+.stage-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2) ★ 큰 이미지 영역 내부: 4개의 클릭 가능한 사문(四門) 오버레이 런처 */
+.icons-launcher-overlay {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 860px;
+  background: rgba(18, 10, 22, 0.92);
+  border: 2px solid #D4AF37;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.95), 0 0 24px rgba(200, 50, 32, 0.35);
+  padding: 14px 18px;
+  z-index: 20;
+}
+
+.launcher-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #6E2024;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+.launcher-title {
+  font-size: 0.86rem;
+  font-weight: bold;
+  color: #F7E7A6;
+  letter-spacing: 0.08em;
+  font-family: "Yu Mincho", "Batang", serif;
+}
+
+.launcher-tip {
+  font-size: 0.75rem;
+  color: #E8C5D0;
+  font-family: "Yu Mincho", "Batang", serif;
+}
+
+/* 4개 아이콘 가로 정렬 그리드 */
+.icons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* 클릭 가능한 개별 아이콘 버튼 링크 */
+.desktop-icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: linear-gradient(180deg, #1A1022 0%, #100816 100%);
+  border: 2px solid #6E2024;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 2px 2px 0px #08040A;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.desktop-icon-btn:hover {
+  background: #28122A;
+  border-color: #D4AF37;
+  box-shadow: 4px 4px 0px #C83220, 0 0 12px rgba(212, 175, 55, 0.4);
+  transform: translateY(-4px);
+}
+
+.desktop-icon-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 1px 1px 0px #C83220;
+}
+
+/* 아이콘 이미지 프레임 */
+.desktop-icon-box {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background-color: #0A050D;
+  border: 1px solid #A4261B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.desktop-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.desktop-icon-number {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #C83220;
+  color: #FAF6ED;
+  font-size: 0.62rem;
+  font-weight: bold;
+  padding: 1px 4px;
+  font-family: serif;
+  border: 1px solid #D4AF37;
+}
+
+/* 아이콘 라벨 영역 */
+.desktop-icon-label-wrap {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.desktop-icon-title {
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: #FFFDF8;
+  letter-spacing: -0.01em;
+  font-family: "Yu Mincho", "Batang", serif;
+}
+
+.desktop-icon-btn:hover .desktop-icon-title {
+  color: #F7E7A6;
+}
+
+.desktop-icon-subtitle {
+  font-size: 0.70rem;
+  color: #D4AF37;
+  font-family: "Yu Mincho", "Batang", serif;
+}
+
+/* 3) 메인 이미지 영역 하단 설명 바 */
+.stage-caption-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(16, 8, 20, 0.94);
+  border-top: 1px solid #C83220;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.stage-caption-text {
+  font-size: 0.86rem;
+  color: #EADBC8;
+  font-family: "Yu Mincho", "Batang", serif;
+}
+
+.caption-highlight {
+  color: #F7E7A6;
+  font-weight: bold;
+}
+
+.stage-status-badge {
+  font-size: 0.74rem;
+  color: #F7E7A6;
+  border: 1px solid #D4AF37;
+  padding: 2px 10px;
+  background-color: #381014;
+  font-family: "Yu Mincho", "Batang", serif;
+  letter-spacing: 0.05em;
+}
+
+/* ========================================================
+   [5] 하단 푸터 바
+   ======================================================== */
+.retro-footer-bar {
+  width: 100%;
+  background-color: #0C0610;
+  border-top: 1px solid #281420;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  color: #8A7280;
+  font-family: "Yu Mincho", "Batang", serif;
+}
+
+/* ========================================================
+   [6] 반응형 모바일 대응
+   ======================================================== */
+@media (max-width: 768px) {
+  .top-header-bar {
+    padding: 8px 12px;
+  }
+
+  .main-image-stage {
+    height: 520px;
+  }
+
+  .icons-launcher-overlay {
+    top: 14px;
+    width: calc(100% - 24px);
+    padding: 10px;
+  }
+
+  .icons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .desktop-icon-box {
+    width: 52px;
+    height: 52px;
+  }
+
+  .desktop-icon-title {
+    font-size: 0.80rem;
+  }
+
+  .stage-caption-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px 12px;
+  }
+}

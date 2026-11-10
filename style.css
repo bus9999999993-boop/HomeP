@@ -1,0 +1,510 @@
+/* ========================================================
+   [STYLE.CSS] 2000s 레트로 Y2K 3단 개인 홈페이지 스타일시트
+   - 연하늘(Sky Blue) & 연노랑(Light Yellow) 레트로 컬러 테마
+   - 완전한 각진 네모 (모든 곡선/점선 완전 삭제)
+   - 3단 레이아웃: [왼쪽 플레이리스트/D-DAY/사진] + [가운데 메인] + [오른쪽 세로광고배너]
+   ======================================================== */
+
+/* 1. 기본 초기화 및 레트로 폰트 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important; /* ★ 모든 곡선 완전 삭제, 각진 네모 고정 */
+}
+
+body {
+  /* 🎀 연하늘 도트 패턴 고정 배경: 부드러운 연하늘(#D8EEF8) 바탕에 깔끔한 흰색 도트 */
+  background-color: #D8EEF8;
+  background-image: radial-gradient(#FFFFFF 22%, transparent 22%);
+  background-size: 16px 16px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  color: #2D4352; /* 레트로 다크 슬레이트 블루 */
+  font-family: "Gulim", "Dotum", "Apple SD Gothic Neo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  padding: 24px 14px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* 2. 전체 메인 도화지 (각진 네모 레트로 컨테이너) */
+.retro-wrapper {
+  width: 100%;
+  max-width: 1040px; /* 3단 구성을 위해 적절한 폭으로 확장 */
+  background-color: #FFFFFF;
+  border: 3px solid #7DC5E6; /* 연하늘 실선 테두리 */
+  box-shadow: 4px 4px 0px #BFDFEE; /* 레트로 각진 하드 섀도우 */
+  padding: 16px;
+}
+
+/* ========================================================
+   상단 배너 이미지 공간 (각진 네모)
+   ======================================================== */
+.banner-section {
+  margin-bottom: 14px;
+}
+
+.banner-frame {
+  width: 100%;
+  border: 2px solid #7DC5E6;
+  background-color: #FFFDF5;
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ========================================================
+   3단 레트로 본문 레이아웃
+   - [LEFT]: 230px (플레이리스트 + D-DAY + 추가 사진)
+   - [CENTER]: 1fr (HOME + 메인 사진 + News)
+   - [RIGHT]: 160px (세로 광고 배너)
+   ======================================================== */
+.main-three-columns {
+  display: grid;
+  grid-template-columns: 230px 1fr 160px;
+  gap: 14px;
+  align-items: stretch; /* ★ 좌우 컬럼이 가운데 높이에 맞춰 꽉 채워짐 */
+}
+
+/* 공통 레트로 각진 박스 */
+.retro-box {
+  background-color: #FFFFFF;
+  border: 2px solid #7DC5E6; /* 연하늘 실선 */
+  margin-bottom: 12px;
+}
+
+.box-header {
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #93D2EE;
+}
+
+.box-title {
+  font-size: 0.88rem;
+  font-weight: bold;
+  letter-spacing: 0.04em;
+}
+
+.box-bullet {
+  font-size: 0.8rem;
+}
+
+/* ========================================================
+   [LEFT COLUMN] 왼쪽 열
+   ======================================================== */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* ★ 가운데 열 높이에 맞춰 꽉 채움 */
+}
+
+/* 1) 플레이리스트 위젯 */
+.player-header {
+  background-color: #E1F2FB; /* 연하늘 헤더 */
+  color: #1E668C;
+}
+
+.player-body {
+  padding: 8px;
+  background-color: #FFFDF8;
+}
+
+.video-container {
+  width: 100%;
+  height: 160px; /* 실제 영상이 재생 가능한 크기로 조정 */
+  border: 1px solid #93D2EE;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.player-caption {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #4A6E82;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: monospace;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 2) D-DAY 위젯 (연노랑 테마 + 도트 배경) */
+.dday-box .box-header {
+  background-color: #FFF2C2; /* 연노랑 헤더 */
+  color: #7A4F00;
+  border-bottom-color: #F0CD70;
+}
+
+.dday-box .box-bullet {
+  color: #D68D00;
+}
+
+.dday-list {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #FFFDF8;
+  background-image: radial-gradient(#F5E4BE 15%, transparent 15%);
+  background-size: 10px 10px;
+}
+
+.dday-card-item {
+  background-color: #FFFFFF;
+  border: 1px solid #F3CCA4;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 0px #FDE8D4;
+}
+
+.dday-label {
+  font-size: 0.92rem;
+  font-weight: bold;
+  color: #334E5E;
+}
+
+.dday-count {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #1E668C;
+  background-color: #E8F4FA; /* 연하늘 뱃지 */
+  border: 1px solid #93D2EE;
+  padding: 2px 8px;
+  font-family: monospace;
+}
+
+/* 3) 디데이 밑 추가 사진 공간 (글자 없이 사진만 채움) */
+.sub-photo-box {
+  flex: 1;          /* ★ 남은 세로 공간을 전부 차지해 빈칸 없이 꽉 채움 */
+  min-height: 100px; /* 최소 높이 보장 */
+  margin-bottom: 0;  /* 마지막 요소이므로 하단 마진 제거 */
+}
+
+/* ========================================================
+   [CENTER COLUMN] 가운데 열 (그대로 유지)
+   ======================================================== */
+.center-column {
+  min-width: 0; /* flex/grid 오버플로우 방지 */
+}
+
+/* HOME 일자 바 */
+.sub-header-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFFDEB; /* 연노랑 */
+  border: 1px solid #F7D478; /* 연노랑 실선 */
+  padding: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.home-title-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: #7DC5E6; /* 연하늘 */
+  color: #FFFFFF;
+  padding: 3px 8px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  border: 1px solid #58AFD6;
+}
+
+.home-bracket {
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.header-divider {
+  color: #93CBE8;
+  font-weight: bold;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.home-intro-wrap {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.home-intro-text {
+  font-size: 0.86rem;
+  color: #385363;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 메인 사진 액자 */
+.main-photo-section {
+  margin-bottom: 12px;
+}
+
+.photo-frame {
+  background-color: #FFFDF5; /* 연노랑 크림 */
+  border: 2px solid #7DC5E6; /* 연하늘 실선 */
+  padding: 6px;
+}
+
+.frame-bar {
+  background-color: #E1F2FB; /* 연하늘 타이틀 바 */
+  border-bottom: 1px solid #93D2EE;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.frame-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #1E668C;
+  letter-spacing: 0.05em;
+}
+
+.frame-sub {
+  font-size: 0.72rem;
+  color: #5587A2;
+  font-family: monospace;
+}
+
+.photo-inner {
+  border: 1px solid #CBE7F6;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  height: 350px; /* ★ 단정하고 안정적인 가로 직사각형 형태 */
+}
+
+.main-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 사진을 직사각형 프레임에 꽉 차게 표시 */
+  display: block;
+}
+
+/* News 파트 (포스터 카드 2개) */
+.news-box .box-header {
+  background-color: #E1F2FB; /* 연하늘 헤더 */
+  color: #1E668C;
+  border-bottom-color: #93D2EE;
+}
+
+.news-box .box-bullet {
+  color: #2E7EAA;
+}
+
+.news-list {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #FFFDF8;
+}
+
+.news-poster-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid #CBE7F6;
+  padding: 8px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 2px 2px 0px #E1F0F8;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.news-poster-card:hover {
+  transform: translate(-1px, -1px);
+  border-color: #3D98C6;
+  box-shadow: 3px 3px 0px #C7E3F2;
+}
+
+.poster-thumb-wrap {
+  width: 80px;
+  height: 105px;
+  flex-shrink: 0;
+  border: 1px solid #93D2EE;
+  background-color: #FFFDF5;
+  overflow: hidden;
+}
+
+.poster-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-badge-tag {
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #1E668C;
+  margin-bottom: 2px;
+  font-family: monospace;
+}
+
+.news-item-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #254252;
+  margin-bottom: 4px;
+  transition: color 0.15s ease;
+}
+
+.news-poster-card:hover .news-item-title {
+  color: #0E74A8;
+}
+
+.news-item-desc {
+  font-size: 0.82rem;
+  color: #506978;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.news-enter-btn {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #1E668C;
+  display: inline-block;
+  font-family: monospace;
+}
+
+.news-poster-card:hover .news-enter-btn {
+  color: #094F74;
+}
+
+/* ========================================================
+   [RIGHT COLUMN] 오른쪽 세로 광고 배너
+   ======================================================== */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* ★ 가운데 열 높이에 맞춰 꽉 채움 */
+}
+
+/* 글자 없는 순수 사진 전용 공통 프레임 */
+.pure-photo-box {
+  border: 2px solid #7DC5E6;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 2px 2px 0px #BFDFEE;
+  display: block;
+}
+
+.pure-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ad-banner-box {
+  flex: 2;           /* ★ 오른쪽 배너가 2/3 비율 차지 */
+  min-height: 200px; /* 최소 높이 보장 */
+}
+
+.side-photo-box {
+  flex: 1;           /* ★ 남은 공간(1/3) 차지, 빈칸 없이 꽉 채움 */
+  min-height: 80px;  /* 최소 높이 보장 */
+  margin-bottom: 0;  /* 마지막 요소이므로 하단 마진 제거 */
+}
+
+/* ========================================================
+   하단 푸터
+   ======================================================== */
+.retro-footer {
+  margin-top: 14px;
+  border-top: 1px solid #93D2EE;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #5587A2;
+  font-family: monospace;
+}
+
+/* ========================================================
+   반응형 디자인 (화면 크기에 따른 3단 정리)
+   ======================================================== */
+@media (max-width: 900px) {
+  .main-three-columns {
+    grid-template-columns: 220px 1fr; /* 오른쪽 배너는 아래로 */
+  }
+
+  .right-column {
+    grid-column: span 2;
+  }
+
+  .side-banner-img {
+    max-height: 200px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 12px 6px;
+  }
+
+  .retro-wrapper {
+    padding: 8px;
+  }
+
+  .main-three-columns {
+    grid-template-columns: 1fr; /* 스마트폰은 1열 */
+  }
+
+  .right-column {
+    grid-column: span 1;
+  }
+
+  .sub-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .home-intro-text {
+    white-space: normal;
+  }
+
+  .poster-thumb-wrap {
+    width: 70px;
+    height: 90px;
+  }
+
+  .photo-inner {
+    height: 240px; /* 스마트폰 화면에서는 240px 직사각형으로 조절 */
+  }
+}

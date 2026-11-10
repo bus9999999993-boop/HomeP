@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>★ My Retro Homepage ★</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 전체 메인 도화지 (각진 네모 레트로 컨테이너) -->
+  <div class="retro-wrapper">
+
+    <!-- 1. 제일 위 상단 배너 이미지 공간 (각진 네모) -->
+    <!-- 💡 팁: assets/images/header_banner.jpg 파일로 교체할 수 있습니다 -->
+    <header class="banner-section">
+      <div class="banner-frame">
+        <img src="assets/images/header_banner.svg" alt="상단 헤더 배너" class="banner-img" id="topBannerImg">
+      </div>
+    </header>
+
+    <!-- 3단 레트로 본문 레이아웃 (왼쪽 사이드 / 가운데 메인 / 오른쪽 광고배너) -->
+    <div class="main-three-columns">
+
+      <!-- ==============================================
+           [LEFT COLUMN] 왼쪽 열
+           - 1) 왼쪽 위: 플레이리스트(영상링크) 위젯
+           - 2) 중간: D-DAY 위젯
+           - 3) 디데이 밑: 추가 사진 공간
+           ============================================== -->
+      <aside class="left-column">
+
+        <!-- 1) 플레이리스트 (영상/음악 재생) 위젯 -->
+        <div class="retro-box player-box">
+          <div class="box-header player-header">
+            <span class="box-bullet">♪</span>
+            <h3 class="box-title">BGM PLAYER</h3>
+            <span class="box-bullet">♪</span>
+          </div>
+          <div class="player-body">
+            <!-- 유튜브 영상 임베드 플레이어 (script.js에서 링크를 쉽게 바꿀 수 있습니다) -->
+            <div class="video-container">
+              <iframe 
+                id="playlistIframe"
+                src="https://www.youtube-nocookie.com/embed/DwTinTO0o9I?autoplay=0&rel=0&modestbranding=1" 
+                title="BGM Playlist" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="player-caption">
+              <span class="music-icon">🎧</span>
+              <span class="music-text" id="musicTitle">lofi hip hop radio - beats to relax</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2) D-DAY 영역 (D-DAY 문구 및 디데이 2개 수정 가능) -->
+        <div class="retro-box dday-box">
+          <div class="box-header dday-header">
+            <span class="box-bullet">★</span>
+            <h3 class="box-title" id="ddaySectionTitle">D-DAY</h3>
+            <span class="box-bullet">★</span>
+          </div>
+
+          <div class="dday-list">
+            <!-- 1번 디데이 (🌊☀️) -->
+            <div class="dday-card-item">
+              <span class="dday-label" id="ddayLabel1">🌊☀️</span>
+              <span class="dday-count" id="ddayCount1">D-00</span>
+            </div>
+
+            <!-- 2번 디데이 (🧹🍡) -->
+            <div class="dday-card-item">
+              <span class="dday-label" id="ddayLabel2">🧹🍡</span>
+              <span class="dday-count" id="ddayCount2">D-00</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3) 디데이 밑 사진 공간 (글자 표시 없이 사진만 채움) -->
+        <!-- 💡 팁: assets/images/sub_photo.jpg 파일로 교체할 수 있습니다 -->
+        <div class="pure-photo-box sub-photo-box">
+          <img src="assets/images/네컷.png" alt="디데이 밑 사진" class="pure-photo-img" id="subPhotoImg">
+        </div>
+
+      </aside>
+
+      <!-- ==============================================
+           [CENTER COLUMN] 가운데 열 (가운데 큰 메인 사진 복원)
+           - 1) HOME 및 문구 일자 바
+           - 2) 가운데 대형 메인 사진 1장
+           - 3) News 포스터형 카테고리 카드 2개
+           ============================================== -->
+      <main class="center-column">
+
+        <!-- HOME 과 문구가 일자로 들어가는 서브 헤더 바 -->
+        <nav class="sub-header-bar">
+          <div class="home-title-tag">
+            <span class="home-bracket">[</span>
+            <span class="home-text" id="homeTitle">HOME</span>
+            <span class="home-bracket">]</span>
+          </div>
+          <div class="header-divider">::</div>
+          <div class="home-intro-wrap">
+            <p class="home-intro-text" id="introText">
+              꾸준히 나아가는 나만의 기록 공간입니다. 하루하루 소중한 순간과 목표를 담아갑니다.
+            </p>
+          </div>
+        </nav>
+
+        <!-- 가운데 크게 사진을 삽입할 수 있는 메인 포토 공간 (단일 큰 네모 액자) -->
+        <!-- 💡 팁: assets/images/main_photo.jpg 파일로 교체할 수 있습니다 -->
+        <section class="main-photo-section">
+          <div class="photo-frame">
+            <div class="frame-bar">
+              <span class="frame-title">★ MAIN PHOTO ★</span>
+              <span class="frame-sub">assets/images/main_photo.jpg</span>
+            </div>
+            <div class="photo-inner">
+              <img src="assets/images/큰이미지.png" alt="가운데 대형 메인 사진" class="main-photo-img" id="mainPhotoImg">
+            </div>
+          </div>
+        </section>
+
+        <!-- News 파트 (포스터 이미지 + 카테고리 연결) -->
+        <section class="news-section">
+          <div class="retro-box news-box">
+            <div class="box-header news-header">
+              <span class="box-bullet">★</span>
+              <h3 class="box-title" id="newsSectionTitle">News</h3>
+              <span class="box-bullet">★</span>
+            </div>
+
+            <div class="news-list">
+              <!-- [포스터 뉴스 1: 萬事屋 카테고리 연결 -> category1.html] -->
+              <a href="category1.html" class="news-poster-card" id="cardLife">
+                <div class="poster-thumb-wrap">
+                  <img src="assets/images/category1_poster.svg" alt="萬事屋 헤이안 에마키 포스터" class="poster-thumb" id="cat1Image">
+                </div>
+                <div class="news-content">
+                  <div class="news-badge-tag" id="cat1Tag">🎏 平安 萬事屋</div>
+                  <h4 class="news-item-title" id="cat1Title">萬事屋 (Yorozuya)</h4>
+                  <p class="news-item-desc" id="cat1Desc">만사옥__괴이와 주술, 일상의 온갖 번뇌 해결. 음양사·주술사 우대. 단, 사례금(엽전) 필수 지참.</p>
+                  <span class="news-enter-btn">[ 門을 열기 &rarr; ]</span>
+                </div>
+              </a>
+
+              <!-- [포스터 뉴스 2: Crack High school 카테고리 연결 -> category2.html] -->
+              <a href="category2.html" class="news-poster-card" id="cardStudy">
+                <div class="poster-thumb-wrap">
+                  <img src="assets/images/category2_poster.svg" alt="Study & Goals 포스터" class="poster-thumb" id="cat2Image">
+                </div>
+                <div class="news-content">
+                  <div class="news-badge-tag" id="cat2Tag">CATEGORY 02</div>
+                  <h4 class="news-item-title" id="cat2Title">Study & Goals</h4>
+                  <p class="news-item-desc" id="cat2Desc">성장을 위한 공부, 자격증, 올해의 계획과 메모를 모아두는 공간</p>
+                  <span class="news-enter-btn">[ Enter &rarr; ]</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- ==============================================
+           [RIGHT COLUMN] 오른쪽 열
+           - 1) 오른쪽 세로 긴 배너 사진 (글자 없이 사진만 채움)
+           - 2) 배너 밑 사진 (글자 없이 사진만 채움)
+           ============================================== -->
+      <aside class="right-column">
+        <!-- 1) 오른쪽 세로 배너 사진 공간 -->
+        <!-- 💡 팁: assets/images/side_banner.jpg 파일로 교체할 수 있습니다 -->
+        <div class="pure-photo-box ad-banner-box">
+          <img src="assets/images/side_banner.svg" alt="오른쪽 세로 광고 배너" class="pure-photo-img side-banner-img" id="sideBannerImg">
+        </div>
+
+        <!-- 2) 오른쪽 배너 밑 사진 공간 -->
+        <!-- 💡 팁: assets/images/side_photo.jpg 파일로 교체할 수 있습니다 -->
+        <div class="pure-photo-box side-photo-box">
+          <img src="assets/images/side_photo.svg" alt="오른쪽 배너 밑 사진" class="pure-photo-img" id="sidePhotoImg">
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- 하단 푸터 (각진 네모) -->
+    <footer class="retro-footer">
+      <p>★ My Personal Retro Homepage ★</p>
+    </footer>
+
+  </div>
+
+  <!-- 설정 및 서비스 스크립트 로드 (클라우드 확장 가능 구조) -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

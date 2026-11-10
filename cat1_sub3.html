@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❖ 萬事屋 :: 3. 平安 일기 (Diary) ❖</title>
+  <link rel="stylesheet" href="category_gallery.css">
+</head>
+<body>
+
+  <!-- ==============================================
+       [1] 최상단 네비게이션 헤더 바 (돌아가기 버튼)
+       ============================================== -->
+  <header class="gallery-header-bar">
+    <div class="nav-buttons-group">
+      <a href="category1.html" class="back-nav-btn" id="btnBackToYorozuya">
+        <span>◀</span>
+        <span>[ 萬事屋 본전으로 ]</span>
+      </a>
+      <a href="index.html" class="back-nav-btn home-nav-btn">
+        <span>[ 🏠 帰路 · 전체 HOME ]</span>
+      </a>
+    </div>
+
+    <div class="header-status-title">
+      <span class="header-badge">平安 萬事屋</span>
+      <span class="header-desc">🎏 平安 일기 (HEIAN DIARY & CLIPS)</span>
+    </div>
+  </header>
+
+  <!-- ==============================================
+       [2] 화면 중앙 뷰포트 (전체 브라우저 스크롤 없음)
+       ============================================== -->
+  <main class="gallery-main-viewport">
+
+    <!-- ★ 크기가 고정된 전통 화첩/문서 윈도우 프레임 -->
+    <div class="fixed-white-window">
+
+      <!-- 헤이안 윈도우 상단 타이틀 바 -->
+      <div class="window-title-bar">
+        <div class="window-title-left">
+          <span class="window-icon">❖</span>
+          <span>[ 随筆草子 · 만사옥 일기장 사진/영상 첩 (DIARY) ]</span>
+        </div>
+        <div class="window-controls">
+          <span class="control-box">-</span>
+          <span class="control-box">&square;</span>
+          <span class="control-box">&times;</span>
+        </div>
+      </div>
+
+      <!-- 상단 툴바: 사진/동영상 파일 추가 버튼 -->
+      <div class="gallery-toolbar">
+        <div class="toolbar-left">
+          <input type="file" id="mediaFileInput" accept="image/*,video/*" multiple style="display: none;">
+          
+          <button type="button" class="btn-upload-trigger" onclick="document.getElementById('mediaFileInput').click();">
+            <span>🎏</span>
+            <span>[ 일기 그림 / 영상 추가 ]</span>
+          </button>
+
+          <span class="toolbar-info-text">💡 계절의 변화와 날들의 기록을 일기장에 담아둡니다.</span>
+        </div>
+
+        <div class="toolbar-right">
+          <span class="toolbar-counter" id="mediaCountDisplay">총 0개의 기록</span>
+        </div>
+      </div>
+
+      <!-- ★ 흰색 콘텐츠 영역 내부에서만 스크롤되는 미디어 그리드 본문 -->
+      <div class="gallery-scroll-body">
+        <div class="media-grid-container" id="mediaGrid">
+          <!-- gallery_engine.js에 의해 정사각형 썸네일이 최근 순서대로 렌더링됩니다 -->
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ==============================================
+       [3] 원본 크기 미리보기 모달 창
+       ============================================== -->
+  <div class="retro-modal" id="mediaModal" role="dialog" aria-modal="true">
+    <div class="modal-content-box">
+      <div class="modal-header-bar">
+        <span class="modal-title-text" id="modalMediaTitle">미디어 원본 보기</span>
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="modal-delete-btn" id="modalDeleteBtn" title="이 미디어 삭제">[ 🗑️ 삭제 ]</button>
+          <button type="button" class="modal-close-btn" id="modalCloseBtn" title="닫기 (ESC)">[ &times; 닫기 ]</button>
+        </div>
+      </div>
+      <div class="modal-media-viewport" id="modalMediaBody"></div>
+    </div>
+  </div>
+
+  <script src="gallery_engine.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      new RetroGalleryEngine({
+        storageKey: "yorozuya_sub3_diary",
+        initialItems: [
+          {
+            id: "default_diary_1",
+            type: "image",
+            url: "assets/images/category1_poster.svg",
+            name: "일기_스냅샷_당고가게.svg",
+            timestamp: 1000
+          },
+          {
+            id: "default_diary_2",
+            type: "image",
+            url: "assets/images/yorozuya_bg.svg",
+            name: "만사옥_밤풍경.svg",
+            timestamp: 2000
+          }
+        ]
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <rect width="160" height="160" rx="80" fill="#F4EFEA"/>
+  <circle cx="80" cy="62" r="28" fill="#DDD5CB"/>
+  <path d="M40 135 C 40 102, 120 102, 120 135 Z" fill="#DDD5CB"/>
+  <text x="80" y="152" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="500" fill="#9C9488" text-anchor="middle">PROFILE</text>
+</svg>

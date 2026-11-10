@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="100%" height="100%">
+  <defs>
+    <!-- 헤이안 밤하늘 그라디언트 (깊은 옻칠 검정과 남색) -->
+    <linearGradient id="heianNight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0B0910"/>
+      <stop offset="40%" stop-color="#14101A"/>
+      <stop offset="75%" stop-color="#1C1826"/>
+      <stop offset="100%" stop-color="#281A1C"/>
+    </linearGradient>
+
+    <!-- 금박 그라디언트 -->
+    <linearGradient id="goldLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E7A6"/>
+      <stop offset="35%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#AA820A"/>
+      <stop offset="100%" stop-color="#E5C158"/>
+    </linearGradient>
+
+    <!-- 주홍색(주사) 그라디언트 -->
+    <linearGradient id="vermilionGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E84A38"/>
+      <stop offset="50%" stop-color="#C83220"/>
+      <stop offset="100%" stop-color="#8F1D10"/>
+    </linearGradient>
+
+    <!-- 청해파 (Seigaiha) 전통 파도 패턴 -->
+    <pattern id="seigaiha" width="40" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 0 20 A 20 20 0 0 1 40 20 M 5 20 A 15 15 0 0 1 35 20 M 10 20 A 10 10 0 0 1 30 20 M 15 20 A 5 5 0 0 1 25 20" fill="none" stroke="#D4AF37" stroke-width="0.8" opacity="0.18"/>
+      <path d="M -20 10 A 20 20 0 0 1 20 10 M -15 10 A 15 15 0 0 1 15 10 M -10 10 A 10 10 0 0 1 10 10 M -5 10 A 5 5 0 0 1 5 10" fill="none" stroke="#D4AF37" stroke-width="0.8" opacity="0.18"/>
+      <path d="M 20 10 A 20 20 0 0 1 60 10 M 25 10 A 15 15 0 0 1 55 10 M 30 10 A 10 10 0 0 1 50 10 M 35 10 A 5 5 0 0 1 45 10" fill="none" stroke="#D4AF37" stroke-width="0.8" opacity="0.18"/>
+    </pattern>
+
+    <!-- 삼잎 (Asanoha) 전통 기하학 패턴 -->
+    <pattern id="asanoha" width="30" height="52" patternUnits="userSpaceOnUse">
+      <path d="M 15 0 L 0 8.66 L 0 26 L 15 34.64 L 30 26 L 30 8.66 Z" fill="none" stroke="#AA820A" stroke-width="0.6" opacity="0.15"/>
+      <path d="M 15 0 L 15 34.64 M 0 8.66 L 30 26 M 0 26 L 30 8.66" fill="none" stroke="#AA820A" stroke-width="0.6" opacity="0.15"/>
+    </pattern>
+
+    <!-- 전통 구름 (금운 / 金雲) 필터 효과 -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- 1. 배경 밤하늘 -->
+  <rect width="900" height="560" fill="url(#heianNight)"/>
+
+  <!-- 2. 전통 파도 청해파 패턴 레이어 -->
+  <rect width="900" height="560" fill="url(#seigaiha)"/>
+  <rect y="380" width="900" height="180" fill="url(#asanoha)"/>
+
+  <!-- 3. 금박 액자 외곽 프레임 (칠기 느낌) -->
+  <rect x="8" y="8" width="884" height="544" fill="none" stroke="#C83220" stroke-width="2.5"/>
+  <rect x="14" y="14" width="872" height="532" fill="none" stroke="url(#goldLeaf)" stroke-width="1.5"/>
+  <rect x="20" y="20" width="860" height="520" fill="none" stroke="#3D2018" stroke-width="1"/>
+
+  <!-- 네 모서리 금동 장식 (金具) -->
+  <g fill="url(#goldLeaf)">
+    <!-- 좌상단 -->
+    <polygon points="14,14 44,14 44,20 20,20 20,44 14,44"/>
+    <circle cx="28" cy="28" r="3" fill="#C83220"/>
+    <!-- 우상단 -->
+    <polygon points="886,14 856,14 856,20 880,20 880,44 886,44"/>
+    <circle cx="872" cy="28" r="3" fill="#C83220"/>
+    <!-- 좌하단 -->
+    <polygon points="14,546 44,546 44,540 20,540 20,516 14,516"/>
+    <circle cx="28" cy="532" r="3" fill="#C83220"/>
+    <!-- 우하단 -->
+    <polygon points="886,546 856,546 856,540 880,540 880,516 886,516"/>
+    <circle cx="872" cy="532" r="3" fill="#C83220"/>
+  </g>
+
+  <!-- 4. 헤이안의 붉은 보름달 (朧月 - 으스름달) -->
+  <g transform="translate(730, 130)">
+    <circle cx="0" cy="0" r="72" fill="#E84A38" opacity="0.25" filter="url(#softGlow)"/>
+    <circle cx="0" cy="0" r="64" fill="url(#goldLeaf)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="68" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <!-- 달을 가로지르는 비단 구름 -->
+    <path d="M -90 10 Q -40 -15 20 -5 T 100 -20 Q 80 5 10 15 T -90 10 Z" fill="#1C1826" opacity="0.75"/>
+  </g>
+
+  <!-- 5. 헤이안 시대 전통 금운 (金雲 / 霞 - 대화회 양식 구름) -->
+  <g fill="url(#goldLeaf)" opacity="0.32" stroke="#AA820A" stroke-width="0.8">
+    <!-- 좌상단 구름 -->
+    <path d="M 20 60 Q 60 40 100 55 Q 140 40 180 50 Q 210 30 250 45 Q 270 70 240 80 Q 200 90 150 80 Q 100 95 60 80 Q 20 85 20 60 Z"/>
+    <path d="M 40 90 Q 90 75 140 85 Q 170 70 210 85 Q 190 105 140 105 Q 80 110 40 90 Z"/>
+    
+    <!-- 우측 하단 구름 -->
+    <path d="M 640 440 Q 690 415 740 430 Q 780 415 820 425 Q 860 410 880 435 L 880 490 Q 820 480 770 490 Q 710 475 660 490 Q 630 465 640 440 Z"/>
+    
+    <!-- 좌측 하단 구름 -->
+    <path d="M 20 470 Q 70 445 130 460 Q 180 445 230 465 Q 210 495 160 500 Q 90 510 20 485 Z"/>
+  </g>
+
+  <!-- 6. 헤이안 시대 침전조(寝殿造) 귀족 저택 및 도리이(鳥居) 실루엣 -->
+  <g fill="#0D0A12" stroke="#C83220" stroke-width="1.5">
+    <!-- 먼 산 실루엣 (히에이산 / 比叡山 느낌) -->
+    <path d="M 20 440 Q 180 370 340 420 Q 520 360 700 420 Q 800 390 880 430 L 880 540 L 20 540 Z" fill="#120D1A" stroke="none"/>
+    <path d="M 120 430 Q 280 380 440 430 Q 620 370 780 430 L 880 470 L 880 540 L 20 540 Z" fill="#181122" stroke="none" opacity="0.7"/>
+
+    <!-- 헤이안 귀족 저택 곡선 지붕 (反り屋根) -->
+    <path d="M 160 440 Q 320 360 480 360 Q 640 360 800 440 L 760 460 Q 640 400 480 400 Q 320 400 200 460 Z" fill="#0D0A12" stroke="#AA820A" stroke-width="1.8"/>
+    <path d="M 280 360 Q 480 300 680 360 L 650 380 Q 480 330 310 380 Z" fill="#0D0A12" stroke="url(#goldLeaf)" stroke-width="1.8"/>
+    
+    <!-- 용마루 장식 (치미 / 鴟尾) -->
+    <path d="M 275 365 Q 260 340 270 325 Q 285 340 290 365 Z" fill="url(#goldLeaf)"/>
+    <path d="M 685 365 Q 700 340 690 325 Q 675 340 670 365 Z" fill="url(#goldLeaf)"/>
+
+    <!-- 정자 기둥 & 난간 (주홍칠 주춧돌과 기둥) -->
+    <rect x="330" y="380" width="12" height="130" fill="#8F1D10" stroke="#C83220"/>
+    <rect x="474" y="360" width="12" height="150" fill="#8F1D10" stroke="#C83220"/>
+    <rect x="618" y="380" width="12" height="130" fill="#8F1D10" stroke="#C83220"/>
+
+    <!-- 격자 문양 쇼지 / 난간 -->
+    <rect x="342" y="440" width="132" height="60" fill="#16101E" stroke="#AA820A" stroke-width="1.2"/>
+    <line x1="342" y1="460" x2="474" y2="460" stroke="#AA820A" stroke-width="0.8"/>
+    <line x1="342" y1="480" x2="474" y2="480" stroke="#AA820A" stroke-width="0.8"/>
+    <line x1="386" y1="440" x2="386" y2="500" stroke="#AA820A" stroke-width="0.8"/>
+    <line x1="430" y1="440" x2="430" y2="500" stroke="#AA820A" stroke-width="0.8"/>
+
+    <rect x="486" y="440" width="132" height="60" fill="#16101E" stroke="#AA820A" stroke-width="1.2"/>
+    <line x1="486" y1="460" x2="618" y2="460" stroke="#AA820A" stroke-width="0.8"/>
+    <line x1="486" y1="480" x2="618" y2="480" stroke="#AA820A" stroke-width="0.8"/>
+    <line x1="530" y1="440" x2="530" y2="500" stroke="#AA820A" stroke-width="0.8"/>
+    <line x1="574" y1="440" x2="574" y2="500" stroke="#AA820A" stroke-width="0.8"/>
+  </g>
+
+  <!-- 7. 흩날리는 벚꽃 가지와 꽃잎 (桜吹雪) -->
+  <!-- 좌측 상단 벚꽃 가지 -->
+  <g stroke="#3D2018" stroke-width="3" fill="none">
+    <path d="M 20 140 Q 90 120 140 160 T 220 150"/>
+    <path d="M 120 145 Q 160 110 190 115"/>
+    <path d="M 70 130 Q 100 90 130 95"/>
+  </g>
+  <!-- 벚꽃 꽃송이들 -->
+  <g fill="#FAD4DF" stroke="#D96F8C" stroke-width="0.6">
+    <circle cx="220" cy="150" r="5"/><circle cx="214" cy="146" r="4.5"/><circle cx="226" cy="146" r="4.5"/><circle cx="216" cy="156" r="4.5"/><circle cx="224" cy="156" r="4.5"/><circle cx="220" cy="151" r="2" fill="#E84A38"/>
+    <circle cx="190" cy="115" r="5"/><circle cx="184" cy="111" r="4.5"/><circle cx="196" cy="111" r="4.5"/><circle cx="186" cy="121" r="4.5"/><circle cx="194" cy="121" r="4.5"/><circle cx="190" cy="116" r="2" fill="#E84A38"/>
+    <circle cx="130" cy="95" r="5"/><circle cx="124" cy="91" r="4.5"/><circle cx="136" cy="91" r="4.5"/><circle cx="126" cy="101" r="4.5"/><circle cx="134" cy="101" r="4.5"/><circle cx="130" cy="96" r="2" fill="#E84A38"/>
+    <circle cx="140" cy="160" r="4"/><circle cx="100" cy="120" r="4"/>
+  </g>
+  <!-- 허공에 흩날리는 꽃잎들 -->
+  <g fill="#FAD4DF" opacity="0.85">
+    <ellipse cx="260" cy="180" rx="4" ry="7" transform="rotate(30 260 180)"/>
+    <ellipse cx="310" cy="220" rx="3" ry="6" transform="rotate(65 310 220)"/>
+    <ellipse cx="280" cy="270" rx="4" ry="7" transform="rotate(-25 280 270)"/>
+    <ellipse cx="380" cy="290" rx="3.5" ry="6" transform="rotate(45 380 290)"/>
+    <ellipse cx="650" cy="200" rx="4" ry="7" transform="rotate(15 650 200)"/>
+    <ellipse cx="710" cy="260" rx="3" ry="6" transform="rotate(-40 710 260)"/>
+    <ellipse cx="780" cy="300" rx="4" ry="7" transform="rotate(50 780 300)"/>
+  </g>
+
+  <!-- 8. 중앙 헤이안 옻칠 현판 : 萬事屋 (Yorozuya) -->
+  <g transform="translate(450, 275)">
+    <!-- 뒤쪽 붉은 비단 매듭 리본 (組紐 / 房飾り) -->
+    <path d="M 0 -68 L -45 -95 L 0 -85 L 45 -95 Z" fill="#C83220"/>
+    <circle cx="0" cy="-68" r="8" fill="url(#goldLeaf)"/>
+    <!-- 술 장식 좌우 -->
+    <path d="M -160 0 L -180 50 L -170 52 L -155 10 Z" fill="#C83220"/>
+    <path d="M 160 0 L 180 50 L 170 52 L 155 10 Z" fill="#C83220"/>
+
+    <!-- 현판 외곽 (주칠 + 금박 테두리) -->
+    <rect x="-160" y="-45" width="320" height="90" fill="#0B080F" stroke="#C83220" stroke-width="3"/>
+    <rect x="-154" y="-39" width="308" height="78" fill="none" stroke="url(#goldLeaf)" stroke-width="2"/>
+    <rect x="-150" y="-35" width="300" height="70" fill="#130D1B" stroke="#2D1B28" stroke-width="1"/>
+
+    <!-- 현판 네 귀퉁이 금장식 -->
+    <polygon points="-154,-39 -138,-39 -154,-23" fill="url(#goldLeaf)"/>
+    <polygon points="154,-39 138,-39 154,-23" fill="url(#goldLeaf)"/>
+    <polygon points="-154,39 -138,39 -154,23" fill="url(#goldLeaf)"/>
+    <polygon points="154,39 138,39 154,23" fill="url(#goldLeaf)"/>
+
+    <!-- 萬事屋 헤이안 서예 폰트 -->
+    <text x="0" y="12" font-family="'Yu Mincho', 'Hiragino Mincho ProN', 'Batang', 'Songti SC', serif" font-size="38" font-weight="bold" fill="url(#goldLeaf)" text-anchor="middle" letter-spacing="14" filter="url(#softGlow)">萬事屋</text>
+    
+    <!-- 상하단 전서체 낙관 / 전분 -->
+    <text x="0" y="-18" font-family="'Yu Mincho', 'Batang', serif" font-size="10" fill="#E5C158" text-anchor="middle" letter-spacing="5">❖ 平安京 萬事承り処 ❖</text>
+    <text x="0" y="32" font-family="'Yu Mincho', 'Batang', serif" font-size="11" fill="#FAD4DF" text-anchor="middle" letter-spacing="6">YOROZUYA :: 平安絵巻</text>
+
+    <!-- 붉은 인장 도장 (印章) -->
+    <g transform="translate(118, -10)">
+      <rect x="-12" y="-12" width="24" height="24" fill="#C83220" stroke="url(#goldLeaf)" stroke-width="1"/>
+      <text x="0" y="5" font-family="'Yu Mincho', 'Batang', serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">万</text>
+    </g>
+  </g>
+
+  <!-- 9. 하단 전통 서명 문구 -->
+  <text x="40" y="525" font-family="'Yu Mincho', 'Batang', serif" font-size="11" fill="#AA820A" letter-spacing="2">❖ 平安京 洛中洛外 万事屋 繪巻物 ❖</text>
+  <text x="860" y="525" font-family="'Yu Mincho', 'Batang', serif" font-size="11" fill="#AA820A" text-anchor="end" letter-spacing="1">千代の契り :: 萬事解決</text>
+</svg>
